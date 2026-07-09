@@ -1,0 +1,2933 @@
+{
+  "version": "mc1.6.0+llama1.9.0",
+  "lastUpdated": "2026-07-09",
+  "modelCatalog": {
+    "version": "1.6.0",
+    "lastUpdated": "2026-06-13",
+    "local": [
+      {
+        "name": "qwen3-coder-next",
+        "displayName": "Qwen3 Coder Next",
+        "family": "qwen",
+        "description": "80B MoE (3B active) — top-ranked local coding model. 70.6% SWE-Bench Verified. Requires 35-46GB VRAM.",
+        "parameterSize": "80B",
+        "downloadSizeGB": 45,
+        "estimatedVramGB": 38,
+        "useCase": "code",
+        "minTier": "xl",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code",
+          "fim"
+        ],
+        "badges": [
+          "editors-pick",
+          "most-capable"
+        ],
+        "benchmarks": {
+          "sweBench": 70.6
+        }
+      },
+      {
+        "name": "glm-4.7-flash",
+        "displayName": "GLM-4.7 Flash",
+        "family": "glm",
+        "description": "Zhipu AI Flash MoE (30B/3B active). 73.8% SWE-Bench Verified. Strong coding and general intelligence. Use tag glm-4.7-flash (bare glm-4.7 does not resolve on Ollama).",
+        "parameterSize": "30B",
+        "downloadSizeGB": 19,
+        "estimatedVramGB": 20,
+        "useCase": "general",
+        "minTier": "large",
+        "capabilities": [
+          "tools",
+          "code"
+        ],
+        "badges": [
+          "editors-pick"
+        ],
+        "benchmarks": {
+          "sweBench": 73.8
+        }
+      },
+      {
+        "name": "qwen3:30b-a3b",
+        "displayName": "Qwen3 30B (A3B MoE)",
+        "family": "qwen",
+        "description": "MoE hybrid — 30B total, only 3B active per token. Fast as a 3B model, accurate as a 30B. Top performer in April 2026 E2E matrix across tool calling, context retention, and code gen. Best overall local model for the price/speed/quality triangle.",
+        "parameterSize": "30B",
+        "downloadSizeGB": 18,
+        "estimatedVramGB": 20,
+        "useCase": "general",
+        "minTier": "large",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "badges": [
+          "editors-pick",
+          "most-capable",
+          "best-value"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "nemotron-3-super:120b",
+        "displayName": "Nvidia Nemotron 3 Super (120B)",
+        "family": "nemotron",
+        "description": "Nvidia Nemotron 3 Super — 120B total, 12B active MoE. 256K context, reasoning ON/OFF, strong agentic tool calling. Requires multi-GPU or high-VRAM workstation (~87GB download). NVIDIA Open Model License.",
+        "parameterSize": "120B-A12B",
+        "downloadSizeGB": 87,
+        "estimatedVramGB": 90,
+        "useCase": "general",
+        "minTier": "xl",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "badges": [
+          "most-capable"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "nemotron-3-nano:30b-a3b",
+        "displayName": "Nvidia Nemotron 3 Nano (30B-A3B)",
+        "family": "nemotron",
+        "description": "Nvidia Nemotron 3 Nano — 31.6B MoE, only 3.6B active per token. 1M context, reasoning ON/OFF with thinking-budget, strong native agentic tool calling. Fast as a 3B model on a single consumer GPU; direct competitor to Qwen3 30B-A3B and GLM-4.7.",
+        "parameterSize": "30B-A3B",
+        "downloadSizeGB": 19,
+        "estimatedVramGB": 20,
+        "useCase": "general",
+        "minTier": "large",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "badges": [
+          "editors-pick"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "nemotron-3-nano:4b",
+        "displayName": "Nvidia Nemotron 3 Nano 4B",
+        "family": "nemotron",
+        "description": "Nvidia Nemotron 3 Nano 4B — compact entry in the Nemotron 3 line. 256K context, reasoning ON/OFF, native tool calling. Runs in ~3 GB VRAM. Good fit for resource-constrained agentic deployments.",
+        "parameterSize": "4B",
+        "downloadSizeGB": 2.8,
+        "estimatedVramGB": 3,
+        "useCase": "general",
+        "minTier": "small",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "qwen3:30b",
+        "displayName": "Qwen3 30B",
+        "family": "qwen",
+        "description": "Dense 30B model. Slower than the a3b MoE variant above but may be more consistent on narrow tasks.",
+        "parameterSize": "30B",
+        "downloadSizeGB": 18,
+        "estimatedVramGB": 18,
+        "useCase": "general",
+        "minTier": "large",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "qwen3-coder:30b",
+        "displayName": "Qwen3 Coder 30B",
+        "family": "qwen",
+        "description": "Dense 30B Qwen3 specialized for coding. Strong on agentic file edits and tool use. Smaller cousin of Qwen3 Coder Next; better fit for 24 GB GPUs that can't run the 80B MoE.",
+        "parameterSize": "30B",
+        "downloadSizeGB": 18,
+        "estimatedVramGB": 20,
+        "useCase": "code",
+        "minTier": "large",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "badges": [
+          "editors-pick"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "qwen3:32b",
+        "displayName": "Qwen3 32B",
+        "family": "qwen",
+        "description": "Dense 32B Qwen3 — one tier up from 30B with slightly more capacity. Good general-purpose pick for 24 GB GPUs.",
+        "parameterSize": "32B",
+        "downloadSizeGB": 19,
+        "estimatedVramGB": 20,
+        "useCase": "general",
+        "minTier": "large",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "qwen3.6:35b",
+        "displayName": "Qwen3.6 35B (MoE)",
+        "family": "qwen",
+        "description": "Qwen3.6 35B MoE (3B active) — fast as a 3B model but draws on 35B total capacity. Companion to qwen3.6:27b; the MoE variant for users who want higher throughput on large-context agentic tasks.",
+        "parameterSize": "35B-A3B",
+        "downloadSizeGB": 18,
+        "estimatedVramGB": 20,
+        "useCase": "code",
+        "minTier": "large",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "badges": [
+          "editors-pick"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "qwen3.6:27b",
+        "displayName": "Qwen3.6 27B",
+        "family": "qwen",
+        "description": "Dense 27B Qwen3.6 (Apr 2026). Beats the Qwen3.5 397B flagship on agentic coding while running on a single consumer GPU. The highest-value local pick for Code mode at this tier.",
+        "parameterSize": "27B",
+        "downloadSizeGB": 17,
+        "estimatedVramGB": 18,
+        "useCase": "code",
+        "minTier": "large",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "badges": [
+          "editors-pick",
+          "most-capable"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "qwen3.5:27b",
+        "displayName": "Qwen3.5 27B",
+        "family": "qwen",
+        "description": "Newer Qwen3.5 generation 27B. Strong general-purpose chat + reasoning. Comfortable on 24 GB at 8K context.",
+        "parameterSize": "27B",
+        "downloadSizeGB": 17,
+        "estimatedVramGB": 18,
+        "useCase": "general",
+        "minTier": "large",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "badges": [
+          "editors-pick"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "qwen2.5-coder:32b",
+        "displayName": "Qwen 2.5 Coder 32B",
+        "family": "qwen",
+        "description": "The coding gold standard for local inference. Excellent on edits, refactors, and FIM autocomplete. Native FIM tokens supported. Best 32B coding model widely available.",
+        "parameterSize": "32B",
+        "downloadSizeGB": 19,
+        "estimatedVramGB": 20,
+        "useCase": "code",
+        "minTier": "large",
+        "capabilities": [
+          "tools",
+          "code",
+          "fim"
+        ],
+        "badges": [
+          "editors-pick",
+          "best-value"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "deepseek-r1:32b",
+        "displayName": "DeepSeek R1 32B",
+        "family": "deepseek",
+        "description": "Deep reasoning with extended chain-of-thought. Rivals GPT-4 on technical tasks.",
+        "parameterSize": "32B",
+        "downloadSizeGB": 19,
+        "estimatedVramGB": 19,
+        "useCase": "reasoning",
+        "minTier": "large",
+        "capabilities": [
+          "thinking",
+          "code"
+        ],
+        "badges": [
+          "most-capable"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "llama3.3:70b",
+        "displayName": "Llama 3.3 70B",
+        "family": "llama",
+        "description": "Meta's flagship. Excellent reasoning, tool use, and code. 111M+ downloads.",
+        "parameterSize": "70B",
+        "downloadSizeGB": 40,
+        "estimatedVramGB": 40,
+        "useCase": "general",
+        "minTier": "xl",
+        "capabilities": [
+          "tools",
+          "code"
+        ],
+        "badges": [
+          "most-capable"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "deepseek-r1:70b",
+        "displayName": "DeepSeek R1 70B",
+        "family": "deepseek",
+        "description": "State-of-the-art open reasoning. Deep chain-of-thought with code generation.",
+        "parameterSize": "70B",
+        "downloadSizeGB": 42,
+        "estimatedVramGB": 42,
+        "useCase": "reasoning",
+        "minTier": "xl",
+        "capabilities": [
+          "thinking",
+          "code"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "llama4:maverick",
+        "displayName": "Llama 4 Maverick",
+        "family": "llama",
+        "description": "Meta's 402B MoE (17B active) — Llama 4 flagship. 1M context, multimodal. Requires multi-GPU setup (~85GB+ VRAM across cards, ~122GB download). Most capable open Llama model.",
+        "parameterSize": "402B-A17B",
+        "downloadSizeGB": 122,
+        "estimatedVramGB": 90,
+        "useCase": "general",
+        "minTier": "xl",
+        "capabilities": [
+          "tools",
+          "vision",
+          "code"
+        ],
+        "badges": [
+          "most-capable"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "llama4-scout",
+        "displayName": "Llama 4 Scout",
+        "family": "llama",
+        "description": "Meta's 109B MoE (17B active). Fast with 512K context. Multimodal vision.",
+        "parameterSize": "109B",
+        "downloadSizeGB": 30,
+        "estimatedVramGB": 28,
+        "useCase": "general",
+        "minTier": "xl",
+        "capabilities": [
+          "tools",
+          "vision",
+          "code"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "deepseek-v3",
+        "displayName": "DeepSeek V3.2",
+        "family": "deepseek",
+        "description": "671B MoE. Frontier quality for reasoning and agentic workloads. 70.2% SWE-Bench Verified.",
+        "parameterSize": "671B",
+        "downloadSizeGB": 130,
+        "estimatedVramGB": 100,
+        "useCase": "reasoning",
+        "minTier": "xl",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "benchmarks": {
+          "sweBench": 70.2
+        }
+      },
+      {
+        "name": "devstral-2",
+        "displayName": "Devstral 2",
+        "family": "mistral",
+        "description": "Mistral's flagship agentic coding model. 72.2% SWE-Bench Verified. 256K context. Apache 2.0.",
+        "parameterSize": "123B",
+        "downloadSizeGB": 74,
+        "estimatedVramGB": 80,
+        "useCase": "code",
+        "minTier": "xl",
+        "capabilities": [
+          "tools",
+          "code",
+          "fim"
+        ],
+        "badges": [
+          "most-capable"
+        ],
+        "benchmarks": {
+          "sweBench": 72.2
+        }
+      },
+      {
+        "name": "qwen2.5-coder:14b",
+        "displayName": "Qwen 2.5 Coder 14B",
+        "family": "qwen",
+        "description": "Mid-tier coding workhorse. Native FIM tokens for inline autocomplete. Comfortable on 12 GB GPUs. Great pairing for Code mode + FIM role.",
+        "parameterSize": "14B",
+        "downloadSizeGB": 9,
+        "estimatedVramGB": 10,
+        "useCase": "code",
+        "minTier": "medium",
+        "capabilities": [
+          "tools",
+          "code",
+          "fim"
+        ],
+        "badges": [
+          "editors-pick"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "qwen3:14b",
+        "displayName": "Qwen3 14B",
+        "family": "qwen",
+        "description": "Hybrid thinking model at medium size. Strong reasoning with tool calling.",
+        "parameterSize": "14B",
+        "downloadSizeGB": 9,
+        "estimatedVramGB": 10,
+        "useCase": "general",
+        "minTier": "medium",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "phi4",
+        "displayName": "Phi-4 14B",
+        "family": "phi",
+        "description": "Microsoft's state-of-the-art 14B. Punches above its weight on reasoning. Note: tool-call E2E tests are failing — use chat/reasoning workflows only until resolved.",
+        "parameterSize": "14B",
+        "downloadSizeGB": 9,
+        "estimatedVramGB": 10,
+        "useCase": "reasoning",
+        "minTier": "medium",
+        "capabilities": [
+          "code"
+        ],
+        "advisoryOnly": true,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "phi4-reasoning",
+        "displayName": "Phi-4 Reasoning 14B",
+        "family": "phi",
+        "description": "Microsoft Phi-4 fine-tuned for chain-of-thought reasoning. 14B, 32K context, MIT license. Note: same family as Phi-4 — tool-call E2E tests are failing, use reasoning/chat workflows only until resolved.",
+        "parameterSize": "14B",
+        "downloadSizeGB": 9,
+        "estimatedVramGB": 10,
+        "useCase": "reasoning",
+        "minTier": "medium",
+        "capabilities": [
+          "thinking",
+          "code"
+        ],
+        "advisoryOnly": true,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "phi4-mini",
+        "displayName": "Phi-4 Mini 3.8B",
+        "family": "phi",
+        "description": "Microsoft's compact Phi-4 Mini (3.8B). 128K context, MIT license. Runs on nearly any GPU. Strong instruction following for its size.",
+        "parameterSize": "3.8B",
+        "downloadSizeGB": 2.5,
+        "estimatedVramGB": 3,
+        "useCase": "general",
+        "minTier": "small",
+        "capabilities": [
+          "tools",
+          "code"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "phi-4-reasoning-vision:15b",
+        "displayName": "Phi-4 Reasoning Vision 15B",
+        "family": "phi",
+        "description": "Microsoft's first multimodal + reasoning Phi (2026-03-04). SigLIP-2 vision encoder with selective chain-of-thought — activates reasoning per task. Note: base Phi-4 tool-call E2E tests are failing; use vision/reasoning workflows until verified.",
+        "parameterSize": "15B",
+        "downloadSizeGB": 9,
+        "estimatedVramGB": 11,
+        "useCase": "reasoning",
+        "minTier": "medium",
+        "capabilities": [
+          "vision",
+          "thinking",
+          "code"
+        ],
+        "advisoryOnly": true,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "mistral-nemo:12b",
+        "displayName": "Mistral Nemo 12B",
+        "family": "mistral",
+        "description": "Fast and efficient. Strong at instruction following and structured output.",
+        "parameterSize": "12B",
+        "downloadSizeGB": 7,
+        "estimatedVramGB": 8.5,
+        "useCase": "chat",
+        "minTier": "medium",
+        "capabilities": [
+          "tools"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "deepseek-r1:14b",
+        "displayName": "DeepSeek R1 14B",
+        "family": "deepseek",
+        "description": "Reasoning model at medium size. Extended chain-of-thought on a budget.",
+        "parameterSize": "14B",
+        "downloadSizeGB": 9,
+        "estimatedVramGB": 10,
+        "useCase": "reasoning",
+        "minTier": "medium",
+        "capabilities": [
+          "thinking",
+          "code"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "mistral-small:24b",
+        "displayName": "Mistral Small 24B",
+        "family": "mistral",
+        "description": "Strong tool use and function calling. Good for structured agentic tasks.",
+        "parameterSize": "24B",
+        "downloadSizeGB": 14,
+        "estimatedVramGB": 15,
+        "useCase": "general",
+        "minTier": "large",
+        "capabilities": [
+          "tools",
+          "code"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "devstral-small:24b",
+        "displayName": "Devstral Small 24B",
+        "family": "mistral",
+        "description": "Mistral's agentic coding model. 46.8% SWE-Bench Verified. Built for tool use and structured output.",
+        "parameterSize": "24B",
+        "downloadSizeGB": 14,
+        "estimatedVramGB": 15,
+        "useCase": "code",
+        "minTier": "large",
+        "capabilities": [
+          "tools",
+          "code"
+        ],
+        "benchmarks": {
+          "sweBench": 46.8
+        }
+      },
+      {
+        "name": "codestral:25.08",
+        "displayName": "Codestral 25.08",
+        "family": "mistral",
+        "description": "Mistral's dedicated FIM code model (2025-08). 22B, 256K context, MNPL license (non-production use). Native FIM tokens — pin to codestral:25.08 as the bare codestral:latest tag maps to an older 32K build. Mirror of the cloud codestral-2508 for local inference.",
+        "parameterSize": "22B",
+        "downloadSizeGB": 13,
+        "estimatedVramGB": 14,
+        "useCase": "code",
+        "minTier": "large",
+        "capabilities": [
+          "code",
+          "fim",
+          "tools"
+        ],
+        "badges": [
+          "editors-pick"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "devstral-small-2",
+        "displayName": "Devstral Small 2",
+        "family": "mistral",
+        "description": "Mistral's updated agentic coding model. 68.0% SWE-Bench Verified. Native FIM. 256K context.",
+        "parameterSize": "24B",
+        "downloadSizeGB": 14,
+        "estimatedVramGB": 15,
+        "useCase": "code",
+        "minTier": "large",
+        "capabilities": [
+          "tools",
+          "code",
+          "fim"
+        ],
+        "badges": [
+          "editors-pick"
+        ],
+        "benchmarks": {
+          "sweBench": 68
+        }
+      },
+      {
+        "name": "mistral-medium-3.5",
+        "displayName": "Mistral Medium 3.5",
+        "family": "mistral",
+        "description": "Mistral's flagship (2026-04-29). 128B dense, 256K context — unified chat + reasoning + code with configurable effort. 77.6% SWE-Bench Verified. Pixtral-lineage multimodal. Available on Ollama.",
+        "parameterSize": "128B",
+        "downloadSizeGB": 75,
+        "estimatedVramGB": 80,
+        "useCase": "general",
+        "minTier": "xl",
+        "capabilities": [
+          "tools",
+          "vision",
+          "thinking",
+          "code"
+        ],
+        "badges": [
+          "most-capable"
+        ],
+        "benchmarks": {
+          "sweBench": 77.6
+        }
+      },
+      {
+        "name": "mistral-small-4",
+        "displayName": "Mistral Small 4",
+        "family": "mistral",
+        "description": "Mistral Small 4 (2026-03-16). 119B, 256K context — multimodal + reasoning + coding in one model. Pixtral-lineage vision.",
+        "parameterSize": "119B",
+        "downloadSizeGB": 70,
+        "estimatedVramGB": 74,
+        "useCase": "general",
+        "minTier": "xl",
+        "capabilities": [
+          "tools",
+          "vision",
+          "thinking",
+          "code"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "command-r:35b",
+        "displayName": "Command R 35B",
+        "family": "command",
+        "description": "Cohere's RAG-optimized model. Excellent for knowledge-grounded conversations.",
+        "parameterSize": "35B",
+        "downloadSizeGB": 20,
+        "estimatedVramGB": 20,
+        "useCase": "chat",
+        "minTier": "large",
+        "capabilities": [
+          "tools"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "qwen2.5-coder:7b",
+        "displayName": "Qwen 2.5 Coder 7B",
+        "family": "qwen",
+        "description": "Small but mighty code model. Native FIM tokens — best small model for inline autocomplete. Recommended FIM role pick on 8 GB GPUs.",
+        "parameterSize": "7B",
+        "downloadSizeGB": 4.5,
+        "estimatedVramGB": 6,
+        "useCase": "code",
+        "minTier": "small",
+        "capabilities": [
+          "tools",
+          "code",
+          "fim"
+        ],
+        "badges": [
+          "best-value"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "qwen3.5:9b",
+        "displayName": "Qwen3.5 9B",
+        "family": "qwen",
+        "description": "Newer Qwen3.5 generation at 9B. Strong general-purpose chat with thinking support. Step up from Qwen3 8B for users on 12 GB GPUs.",
+        "parameterSize": "9B",
+        "downloadSizeGB": 5.5,
+        "estimatedVramGB": 7,
+        "useCase": "general",
+        "minTier": "small",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "qwen3:8b",
+        "displayName": "Qwen3 8B",
+        "family": "qwen",
+        "description": "Great small model with hybrid thinking. Runs on most GPUs. Strong for its size.",
+        "parameterSize": "8B",
+        "downloadSizeGB": 5,
+        "estimatedVramGB": 5.5,
+        "useCase": "general",
+        "minTier": "small",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "badges": [
+          "best-value"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "deepseek-r1:7b",
+        "displayName": "DeepSeek R1 7B",
+        "family": "deepseek",
+        "description": "Reasoning at 7B. Extended thinking on low-end hardware.",
+        "parameterSize": "7B",
+        "downloadSizeGB": 4.7,
+        "estimatedVramGB": 5,
+        "useCase": "reasoning",
+        "minTier": "small",
+        "capabilities": [
+          "thinking"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "qwen3:4b",
+        "displayName": "Qwen3 4B",
+        "family": "qwen",
+        "description": "Hybrid thinking at tiny size. Runs on nearly anything.",
+        "parameterSize": "4B",
+        "downloadSizeGB": 2.6,
+        "estimatedVramGB": 3,
+        "useCase": "general",
+        "minTier": "tiny",
+        "capabilities": [
+          "tools",
+          "thinking"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "gpt-oss",
+        "displayName": "GPT-OSS 7B",
+        "family": "gpt-oss",
+        "description": "OpenAI's open-source model. Good instruction following and chat.",
+        "parameterSize": "7B",
+        "downloadSizeGB": 4.5,
+        "estimatedVramGB": 5,
+        "useCase": "chat",
+        "minTier": "small",
+        "capabilities": [
+          "tools"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "gpt-oss:20b",
+        "displayName": "GPT-OSS 20B",
+        "family": "gpt-oss",
+        "description": "OpenAI's 20B open-source model. Apache 2.0 license. o3-mini-level coding performance for fully local inference. The only OpenAI-origin model available on-device.",
+        "parameterSize": "20B",
+        "downloadSizeGB": 13,
+        "estimatedVramGB": 16,
+        "useCase": "code",
+        "minTier": "large",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "badges": [
+          "editors-pick"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "nomic-embed-text",
+        "displayName": "Nomic Embed Text",
+        "family": "nomic",
+        "description": "Embedding model for RAG and semantic search. 274MB. Not for chat.",
+        "parameterSize": "137M",
+        "downloadSizeGB": 0.3,
+        "estimatedVramGB": 0.5,
+        "useCase": "general",
+        "minTier": "tiny",
+        "capabilities": [],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "granite4.1:30b",
+        "displayName": "IBM Granite 4.1 30B",
+        "family": "granite",
+        "description": "IBM Granite 4.1 30B — 128K context, native tool calling, FIM support. Apache 2.0 license (explicit commercial use permitted — a differentiator for enterprise users). Top pick in the Granite 4.1 line for agentic coding tasks.",
+        "parameterSize": "30B",
+        "downloadSizeGB": 17,
+        "estimatedVramGB": 18,
+        "useCase": "code",
+        "minTier": "large",
+        "capabilities": [
+          "tools",
+          "code",
+          "fim"
+        ],
+        "badges": [
+          "editors-pick"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "granite4.1:8b",
+        "displayName": "IBM Granite 4.1 8B",
+        "family": "granite",
+        "description": "IBM Granite 4.1 8B — 128K context, native tool calling, FIM support. Apache 2.0 license. Efficient mid-tier pick for agentic code tasks on 12 GB GPUs.",
+        "parameterSize": "8B",
+        "downloadSizeGB": 5.3,
+        "estimatedVramGB": 6,
+        "useCase": "code",
+        "minTier": "medium",
+        "capabilities": [
+          "tools",
+          "code",
+          "fim"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "granite4.1:3b",
+        "displayName": "IBM Granite 4.1 3B",
+        "family": "granite",
+        "description": "IBM Granite 4.1 3B — 128K context, native tool calling, FIM support. Apache 2.0 license. Smallest Granite 4.1; runs in ~3 GB VRAM for resource-constrained deployments.",
+        "parameterSize": "3B",
+        "downloadSizeGB": 2.1,
+        "estimatedVramGB": 3,
+        "useCase": "code",
+        "minTier": "small",
+        "capabilities": [
+          "tools",
+          "code",
+          "fim"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "gemma4:31b",
+        "displayName": "Google Gemma 4 31B",
+        "family": "gemma",
+        "description": "Google Gemma 4 31B — dense flagship of the Gemma 4 family (Apr 2026). Native vision, 256K context. Tool calls via text-injection (Gemma native FC pending re-validation). Most capable single-GPU Gemma 4 pick.",
+        "parameterSize": "31B",
+        "downloadSizeGB": 20,
+        "estimatedVramGB": 20,
+        "useCase": "general",
+        "minTier": "large",
+        "capabilities": [
+          "vision",
+          "thinking",
+          "code"
+        ],
+        "badges": [
+          "most-capable"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "gemma4:26b",
+        "displayName": "Google Gemma 4 26B",
+        "family": "gemma",
+        "description": "Google Gemma 4 26B — latest Gemma generation. Native vision, 128K context. Tool calls run via text-injection (Gemma native FC is pending re-validation).",
+        "parameterSize": "26B",
+        "downloadSizeGB": 17,
+        "estimatedVramGB": 17,
+        "useCase": "general",
+        "minTier": "large",
+        "capabilities": [
+          "vision",
+          "thinking",
+          "code"
+        ],
+        "badges": [
+          "editors-pick"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "gemma4:12b",
+        "displayName": "Google Gemma 4 12B",
+        "family": "gemma",
+        "description": "Google Gemma 4 12B — mid-tier successor to Gemma 3 12B. Native vision, 128K context.",
+        "parameterSize": "12B",
+        "downloadSizeGB": 8.5,
+        "estimatedVramGB": 8.5,
+        "useCase": "general",
+        "minTier": "medium",
+        "capabilities": [
+          "vision",
+          "code"
+        ],
+        "badges": [],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "gemma4:e4b",
+        "displayName": "Google Gemma 4 E4B",
+        "family": "gemma",
+        "description": "Google Gemma 4 E4B — 4.5B-effective on-device flagship. Native vision + 128K context. Runs in ~6 GB. Tool calls via text-injection.",
+        "parameterSize": "4.5B-eff",
+        "downloadSizeGB": 5,
+        "estimatedVramGB": 6,
+        "useCase": "general",
+        "minTier": "small",
+        "capabilities": [
+          "vision"
+        ],
+        "badges": [],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "gemma4:e2b",
+        "displayName": "Google Gemma 4 E2B",
+        "family": "gemma",
+        "description": "Google Gemma 4 E2B — 2B-effective on-device VLM. Native vision + 128K context. Runs on nearly anything (~3 GB). Tool calls via text-injection.",
+        "parameterSize": "2B-eff",
+        "downloadSizeGB": 3,
+        "estimatedVramGB": 3,
+        "useCase": "general",
+        "minTier": "tiny",
+        "capabilities": [
+          "vision"
+        ],
+        "badges": [],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "gemma4:4b",
+        "displayName": "Google Gemma 4 4B",
+        "family": "gemma",
+        "description": "Google Gemma 4 4B — small Gemma 4. Native vision. Runs on nearly anything.",
+        "parameterSize": "4B",
+        "downloadSizeGB": 3,
+        "estimatedVramGB": 3,
+        "useCase": "general",
+        "minTier": "tiny",
+        "capabilities": [
+          "vision"
+        ],
+        "badges": [],
+        "benchmarks": {
+          "sweBench": null
+        }
+      }
+    ],
+    "cloud": [
+      {
+        "name": "gpt-4.1",
+        "displayName": "GPT-4.1",
+        "provider": "openai",
+        "description": "OpenAI's latest flagship. Strong coding, reasoning, and instruction following. 54.6% SWE-Bench Verified.",
+        "pricing": {
+          "inputPerMTok": 2,
+          "outputPerMTok": 8
+        },
+        "capabilities": [
+          "tools",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1048576,
+        "benchmarks": {
+          "sweBench": 54.6
+        }
+      },
+      {
+        "name": "gpt-4.1-mini",
+        "displayName": "GPT-4.1 Mini",
+        "provider": "openai",
+        "description": "Cost-efficient model for everyday tasks. Great speed/quality balance.",
+        "pricing": {
+          "inputPerMTok": 0.4,
+          "outputPerMTok": 1.6
+        },
+        "capabilities": [
+          "tools",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1048576,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "o4-mini",
+        "displayName": "o4-mini",
+        "provider": "openai",
+        "description": "OpenAI's reasoning model. 68.1% SWE-Bench Verified. Extended thinking for complex problems.",
+        "pricing": {
+          "inputPerMTok": 1.1,
+          "outputPerMTok": 4.4
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "contextWindow": 200000,
+        "benchmarks": {
+          "sweBench": 68.1
+        }
+      },
+      {
+        "name": "gpt-5.5-pro",
+        "displayName": "GPT-5.5 Pro",
+        "provider": "openai",
+        "description": "OpenAI's premium reasoning variant (Pro/Enterprise-tier). 1.05M context, 128K output. Extended reasoning with max-effort support. $30/$180 per MTok.",
+        "pricing": {
+          "inputPerMTok": 30,
+          "outputPerMTok": 180
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1050000,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "gpt-5.5",
+        "displayName": "GPT-5.5",
+        "provider": "openai",
+        "description": "OpenAI's flagship (2026-04-24). 1.05M context, 128K output. Advanced reasoning with effort levels (incl. xhigh) and agentic coding.",
+        "pricing": {
+          "inputPerMTok": 5,
+          "outputPerMTok": 30
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1050000,
+        "benchmarks": {
+          "sweBench": 80
+        }
+      },
+      {
+        "name": "claude-sonnet-5",
+        "displayName": "Claude Sonnet 5",
+        "provider": "anthropic",
+        "description": "Anthropic's new flagship (added 2026-06-30). 1M context, 128K output. Adaptive thinking, agentic coding and tool use.",
+        "pricing": {
+          "inputPerMTok": 3,
+          "outputPerMTok": 15
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1000000,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "claude-fable-5",
+        "displayName": "Claude Fable 5",
+        "provider": "anthropic",
+        "description": "Anthropic's most capable widely-released model (GA 2026-06-09, reintroduced 2026-06-30). 1M native context. Adaptive thinking always-on, deep reasoning and agentic coding.",
+        "pricing": {
+          "inputPerMTok": 10,
+          "outputPerMTok": 50
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1000000,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "claude-sonnet-4-6",
+        "displayName": "Claude Sonnet 4.6",
+        "provider": "anthropic",
+        "description": "Anthropic's fast, capable model. 79.6% SWE-Bench Verified. Strong coding with extended thinking.",
+        "pricing": {
+          "inputPerMTok": 3,
+          "outputPerMTok": 15
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 200000,
+        "benchmarks": {
+          "sweBench": 79.6
+        }
+      },
+      {
+        "name": "claude-opus-4-8",
+        "displayName": "Claude Opus 4.8",
+        "provider": "anthropic",
+        "description": "Anthropic's most capable Opus model (2026-05-28). 200K context. Deep adaptive reasoning, agentic coding — ~4x less likely to ship code flaws than 4.7. For 1M context, pick the (1M context) variant.",
+        "pricing": {
+          "inputPerMTok": 5,
+          "outputPerMTok": 25
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 200000,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "claude-opus-4-8-1m",
+        "displayName": "Claude Opus 4.8 (1M context)",
+        "provider": "anthropic",
+        "description": "Claude Opus 4.8 with the 1M-token context window (context-1m beta). Same model and quality as Opus 4.8 — for very large codebases or long documents. Premium pricing applies above 200K tokens.",
+        "pricing": {
+          "inputPerMTok": 5,
+          "outputPerMTok": 25
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1048576,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "claude-opus-4-7-1m",
+        "displayName": "Claude Opus 4.7 (1M context)",
+        "provider": "anthropic",
+        "description": "Claude Opus 4.7 (previous flagship) with the 1M-token context window (context-1m beta). Premium pricing applies above 200K tokens.",
+        "pricing": {
+          "inputPerMTok": 5,
+          "outputPerMTok": 25
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1048576,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "claude-haiku-4-5",
+        "displayName": "Claude Haiku 4.5",
+        "provider": "anthropic",
+        "description": "Anthropic's fastest model. 73.3% SWE-Bench Verified. Good for high-volume tasks.",
+        "pricing": {
+          "inputPerMTok": 1,
+          "outputPerMTok": 5
+        },
+        "capabilities": [
+          "tools",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 200000,
+        "benchmarks": {
+          "sweBench": 73.3
+        }
+      },
+      {
+        "name": "gemini-3.1-pro",
+        "displayName": "Gemini 3.1 Pro",
+        "provider": "google",
+        "description": "Google's latest flagship with 1M context. 80.6% SWE-Bench Verified. Strong multimodal and coding.",
+        "pricing": {
+          "inputPerMTok": 2.5,
+          "outputPerMTok": 15
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1048576,
+        "benchmarks": {
+          "sweBench": 80.6
+        }
+      },
+      {
+        "name": "gemini-2.5-pro",
+        "displayName": "Gemini 2.5 Pro",
+        "provider": "google",
+        "description": "Google's flagship with 1M context. 63.8% SWE-Bench Verified. Strong multimodal and code generation.",
+        "pricing": {
+          "inputPerMTok": 1.25,
+          "outputPerMTok": 10
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1048576,
+        "benchmarks": {
+          "sweBench": 63.8
+        }
+      },
+      {
+        "name": "gemini-3.5-flash",
+        "displayName": "Gemini 3.5 Flash",
+        "provider": "google",
+        "description": "Google's fast model (GA 2026-05-19). 1M context with the new thinking_level API. Great cost/performance ratio.",
+        "pricing": {
+          "inputPerMTok": 1.5,
+          "outputPerMTok": 9
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1048576,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "deepseek-v4-pro",
+        "displayName": "DeepSeek V4 Pro",
+        "provider": "deepseek",
+        "description": "DeepSeek's flagship (released 2026-04-24). 1M context, extended chain-of-thought, top agentic tool calling.",
+        "pricing": {
+          "inputPerMTok": 0.435,
+          "outputPerMTok": 0.87
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "contextWindow": 1048576,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "deepseek-v4-flash",
+        "displayName": "DeepSeek V4 Flash",
+        "provider": "deepseek",
+        "description": "DeepSeek's faster V4 model. 1M context, thinking-capable, best cost/speed ratio.",
+        "pricing": {
+          "inputPerMTok": 0.14,
+          "outputPerMTok": 0.28
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "contextWindow": 1048576,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "codestral-2508",
+        "displayName": "Codestral 2508",
+        "provider": "openrouter",
+        "description": "Mistral's dedicated FIM code model (2025-08). 262K context, native FIM tokens, tools. Pin to codestral-2508 — the codestral-latest alias maps to an older 32K build. Available via Mistral API and OpenRouter.",
+        "pricing": {
+          "inputPerMTok": 0.3,
+          "outputPerMTok": 0.9
+        },
+        "capabilities": [
+          "tools",
+          "code",
+          "fim"
+        ],
+        "contextWindow": 262144,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "mistral-large-latest",
+        "displayName": "Mistral Large",
+        "provider": "openrouter",
+        "description": "Mistral Large 3. Strong coding and multilingual capabilities. 262K context.",
+        "pricing": {
+          "inputPerMTok": 2,
+          "outputPerMTok": 6
+        },
+        "capabilities": [
+          "tools",
+          "code"
+        ],
+        "contextWindow": 262144,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "grok-4.5",
+        "displayName": "Grok 4.5",
+        "provider": "xai",
+        "description": "xAI's current flagship (public API 2026-07-08). 500K context, always-on reasoning, function calling / web search / code execution. OpenAI-compatible API.",
+        "pricing": {
+          "inputPerMTok": 2,
+          "outputPerMTok": 6
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "contextWindow": 500000,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "grok-4.3",
+        "displayName": "Grok 4.3",
+        "provider": "xai",
+        "description": "xAI's flagship (public API 2026-04-30). 1M context, native video + vision input, always-on reasoning, top agentic tool calling. OpenAI-compatible API.",
+        "pricing": {
+          "inputPerMTok": 1.25,
+          "outputPerMTok": 2.5
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1048576,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "grok-build-0.1",
+        "displayName": "Grok Build 0.1",
+        "provider": "xai",
+        "description": "xAI's dedicated agentic coding model. 262K context, vision + tools + thinking. OpenAI-compatible API.",
+        "pricing": {
+          "inputPerMTok": 1,
+          "outputPerMTok": 2
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 262144,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "kimi-k2.7-code",
+        "displayName": "Kimi K2.7 Code",
+        "provider": "kimi",
+        "description": "Moonshot AI's coder flagship (GA 2026). 1T MoE / 32B active, 256K context. Thinking is mandatory (always-on). Caches at $0.19/MTok input. Available via openrouter.ai/moonshotai/kimi-k2.7-code.",
+        "pricing": {
+          "inputPerMTok": 0.95,
+          "outputPerMTok": 4
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "contextWindow": 256000,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "minimax-m3",
+        "displayName": "MiniMax M3",
+        "provider": "minimax",
+        "description": "MiniMax's flagship (api.minimax.io). 1M context, native multimodal (vision), toggleable thinking. OpenAI-compatible API.",
+        "pricing": {
+          "inputPerMTok": 0.6,
+          "outputPerMTok": 2.4
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1000000,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "glm-5.2",
+        "displayName": "GLM-5.2 (Z.ai)",
+        "provider": "zai",
+        "description": "Z.ai's current flagship (api.z.ai). 1M context (IndexShare sparse attention), 128K output, native thinking (High/Max effort) + tools. OpenAI-compatible API.",
+        "pricing": {
+          "inputPerMTok": 1.4,
+          "outputPerMTok": 4.4
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "contextWindow": 1000000,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "glm-5.1",
+        "displayName": "GLM-5.1 (Z.ai)",
+        "provider": "zai",
+        "description": "Zhipu AI's cloud-API flagship via Z.ai (api.z.ai). 200K context, thinking + tools. OpenAI-compatible API.",
+        "pricing": {
+          "inputPerMTok": 0.98,
+          "outputPerMTok": 3.08
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "contextWindow": 200000,
+        "benchmarks": {
+          "sweBench": null
+        }
+      }
+    ]
+  },
+  "llamacppCatalog": [
+    {
+      "id": "qwen2.5-coder-32b",
+      "displayName": "Qwen 2.5 Coder 32B",
+      "family": "qwen",
+      "category": "code",
+      "description": "Top-tier code generation and FIM. Recommended for serious coding work on 24GB+ VRAM cards.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "bartowski/Qwen2.5-Coder-32B-Instruct-GGUF",
+        "filenamePattern": "Qwen2.5-Coder-32B-Instruct-{quant}.gguf"
+      },
+      "contextLength": 32768,
+      "supportsTools": true,
+      "supportsFIM": true,
+      "recommendedDraftIds": [
+        "qwen2.5-coder-1.5b"
+      ],
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 19.9,
+          "label": "Q4_K_M (smaller, good quality)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 23.3,
+          "label": "Q5_K_M (balanced — recommended)"
+        },
+        {
+          "id": "Q6_K",
+          "sizeGB": 26.9,
+          "label": "Q6_K (high quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 34.8,
+          "label": "Q8_0 (highest quality, biggest)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 24,
+        "minRamGB": 32,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "qwen2.5-coder-14b",
+      "displayName": "Qwen 2.5 Coder 14B",
+      "family": "qwen",
+      "category": "code",
+      "description": "Excellent code model for mid-tier hardware. Strong FIM, fast on 16GB cards.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "bartowski/Qwen2.5-Coder-14B-Instruct-GGUF",
+        "filenamePattern": "Qwen2.5-Coder-14B-Instruct-{quant}.gguf"
+      },
+      "contextLength": 32768,
+      "supportsTools": true,
+      "supportsFIM": true,
+      "recommendedDraftIds": [
+        "qwen2.5-coder-1.5b"
+      ],
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 8.99,
+          "label": "Q4_K_M (smaller, good quality)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 10.5,
+          "label": "Q5_K_M (balanced — recommended)"
+        },
+        {
+          "id": "Q6_K",
+          "sizeGB": 12.1,
+          "label": "Q6_K (high quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 15.7,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 12,
+        "minRamGB": 16,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "qwen2.5-coder-7b",
+      "displayName": "Qwen 2.5 Coder 7B",
+      "family": "qwen",
+      "category": "code",
+      "description": "Solid code model for 8GB cards. Best small-tier option for FIM.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "Qwen/Qwen2.5-Coder-7B-Instruct-GGUF",
+        "filenamePattern": "qwen2.5-coder-7b-instruct-{quant_lower}.gguf"
+      },
+      "contextLength": 32768,
+      "supportsTools": true,
+      "supportsFIM": true,
+      "recommendedDraftIds": [
+        "qwen2.5-coder-1.5b"
+      ],
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 4.68,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 5.44,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q6_K",
+          "sizeGB": 6.25,
+          "label": "Q6_K (high quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 8.1,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 8,
+        "minRamGB": 16,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "qwen2.5-coder-3b",
+      "displayName": "Qwen 2.5 Coder 3B",
+      "family": "qwen",
+      "category": "code",
+      "description": "Compact code model for low-VRAM machines. Lower quality than 7B but viable for FIM autocomplete.",
+      "license": "qwen-research",
+      "huggingface": {
+        "repoId": "Qwen/Qwen2.5-Coder-3B-Instruct-GGUF",
+        "filenamePattern": "qwen2.5-coder-3b-instruct-{quant_lower}.gguf"
+      },
+      "contextLength": 32768,
+      "supportsTools": true,
+      "supportsFIM": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 1.93,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 2.22,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 3.28,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 4,
+        "minRamGB": 8,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "qwen3-30b-a3b",
+      "displayName": "Qwen 3 30B A3B (MoE)",
+      "family": "qwen",
+      "category": "general",
+      "description": "Mixture-of-experts: 30B params, 3B active. Fast inference at 30B-quality. Strong reasoning + tools.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "unsloth/Qwen3-30B-A3B-GGUF",
+        "filenamePattern": "Qwen3-30B-A3B-{quant}.gguf"
+      },
+      "contextLength": 32768,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 18.6,
+          "label": "Q4_K_M (recommended)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 21.7,
+          "label": "Q5_K_M (high quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 32.5,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 24,
+        "minRamGB": 32,
+        "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
+      "id": "qwen3.6-27b-mtp",
+      "displayName": "Qwen3.6 27B (MTP)",
+      "family": "qwen",
+      "category": "general",
+      "description": "Qwen3.6 27B MTP-variant GGUF — contains NextN/MTP speculative-decode layers. When Performance Mode is on, llama-server uses --spec-type draft-mtp for 1.4×+ tok/s on high-VRAM GPUs. Requires a 20GB+ VRAM card; tested live at 110 tok/s (RTX 5090) vs 75 tok/s without (beta.25 A3 2026-06-02).",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "unsloth/Qwen3.6-27B-MTP-GGUF",
+        "filenamePattern": "Qwen3.6-27B-{quant}.gguf"
+      },
+      "contextLength": 32768,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "supportsMtp": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 15.93,
+          "label": "Q4_K_M (recommended — fits 20GB+ VRAM)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 18.47,
+          "label": "Q5_K_M (higher quality)"
+        },
+        {
+          "id": "Q6_K",
+          "sizeGB": 21.31,
+          "label": "Q6_K (high quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 27.05,
+          "label": "Q8_0 (highest quality, 32GB+ VRAM)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 20,
+        "minRamGB": 16,
+        "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
+      "id": "qwen3-14b",
+      "displayName": "Qwen 3 14B",
+      "family": "qwen",
+      "category": "general",
+      "description": "General-purpose 14B with strong reasoning and tool calling. Great for chat + agentic loop.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "Qwen/Qwen3-14B-GGUF",
+        "filenamePattern": "Qwen3-14B-{quant}.gguf"
+      },
+      "contextLength": 32768,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "recommendedDraftIds": [
+        "qwen3-1.7b"
+      ],
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 8.99,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 10.5,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q6_K",
+          "sizeGB": 12.1,
+          "label": "Q6_K (high quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 15.7,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 12,
+        "minRamGB": 16,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "qwen3-8b",
+      "displayName": "Qwen 3 8B",
+      "family": "qwen",
+      "category": "general",
+      "description": "Solid 8B for everyday chat + tools. Runs comfortably on 8GB cards.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "Qwen/Qwen3-8B-GGUF",
+        "filenamePattern": "Qwen3-8B-{quant}.gguf"
+      },
+      "contextLength": 32768,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 5.2,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 6.05,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 9,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 8,
+        "minRamGB": 16,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "llama-3.3-70b",
+      "displayName": "Llama 3.3 70B",
+      "family": "llama",
+      "category": "general",
+      "description": "Meta's flagship open model. State-of-the-art quality at 70B; needs 48GB+ VRAM at usable quants.",
+      "license": "llama-community",
+      "huggingface": {
+        "repoId": "bartowski/Llama-3.3-70B-Instruct-GGUF",
+        "filenamePattern": "Llama-3.3-70B-Instruct-{quant}.gguf"
+      },
+      "contextLength": 131072,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "recommendedDraftIds": [
+        "llama-3.2-1b"
+      ],
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 42.5,
+          "label": "Q4_K_M (recommended for 48GB cards)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 48,
+        "minRamGB": 64,
+        "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
+      "id": "llama-3.1-8b",
+      "displayName": "Llama 3.1 8B",
+      "family": "llama",
+      "category": "general",
+      "description": "Reliable 8B chat model. Strong tool-calling support, well-tested.",
+      "license": "llama-community",
+      "huggingface": {
+        "repoId": "bartowski/Meta-Llama-3.1-8B-Instruct-GGUF",
+        "filenamePattern": "Meta-Llama-3.1-8B-Instruct-{quant}.gguf"
+      },
+      "contextLength": 131072,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "recommendedDraftIds": [
+        "llama-3.2-1b"
+      ],
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 4.92,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 5.73,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 8.54,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 8,
+        "minRamGB": 16,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "phi-4-14b",
+      "displayName": "Phi 4 14B",
+      "family": "phi",
+      "category": "general",
+      "description": "Microsoft's compact reasoning model. Strong on code + math, MIT license.",
+      "license": "mit",
+      "huggingface": {
+        "repoId": "bartowski/phi-4-GGUF",
+        "filenamePattern": "phi-4-{quant}.gguf"
+      },
+      "contextLength": 16384,
+      "supportsTools": false,
+      "supportsFIM": false,
+      "_toolsNote": "ModelProfileService pins phi-4-14b to nativeFunctionCalling=false. Catalog matches profile reality so the agentic loop and llama-server flag (--jinja) stay consistent.",
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 8.43,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 9.84,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q6_K",
+          "sizeGB": 11.4,
+          "label": "Q6_K (high quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 14.7,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 12,
+        "minRamGB": 16,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "gemma-3-27b",
+      "displayName": "Gemma 3 27B",
+      "family": "gemma",
+      "category": "general",
+      "description": "Google's open model, strong general-purpose chat with multilingual coverage.",
+      "license": "gemma",
+      "huggingface": {
+        "repoId": "bartowski/google_gemma-3-27b-it-GGUF",
+        "filenamePattern": "google_gemma-3-27b-it-{quant}.gguf"
+      },
+      "contextLength": 131072,
+      "supportsTools": false,
+      "supportsFIM": false,
+      "_toolsNote": "Gemma family pinned to nativeFunctionCalling=false in ModelProfileService — Joe-tested 2026-05-05, Gemma 4 degenerated into thinking-only output after 3-4 successful tool calls. Same defensive posture for Gemma 3.",
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 16.6,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 19.4,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 28.7,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 20,
+        "minRamGB": 32,
+        "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
+      "id": "mistral-small-3-24b",
+      "displayName": "Mistral Small 3 24B",
+      "family": "mistral",
+      "category": "general",
+      "description": "Apache 2.0, fast 24B. Strong coding + chat balance.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "bartowski/Mistral-Small-24B-Instruct-2501-GGUF",
+        "filenamePattern": "Mistral-Small-24B-Instruct-2501-{quant}.gguf"
+      },
+      "contextLength": 32768,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "recommendedDraftIds": [],
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 14.3,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 16.8,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 25,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 16,
+        "minRamGB": 24,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "mistral-small-3.2-24b",
+      "displayName": "Mistral Small 3.2 24B",
+      "family": "mistral",
+      "category": "general",
+      "description": "Mistral's updated Small 3.2 (2506) — better instruction-following and fewer repetition loops than 3.1. Apache 2.0, strong coding + chat balance for 16GB+ cards.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "bartowski/mistralai_Mistral-Small-3.2-24B-Instruct-2506-GGUF",
+        "filenamePattern": "mistralai_Mistral-Small-3.2-24B-Instruct-2506-{quant}.gguf"
+      },
+      "contextLength": 131072,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "recommendedDraftIds": [],
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 13.35,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 15.61,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 23.33,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 16,
+        "minRamGB": 24,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "devstral-small-2507",
+      "displayName": "Devstral Small 2507",
+      "family": "mistral",
+      "category": "code",
+      "description": "Mistral's coding-focused 24B with native FIM tokens. Excellent for autocomplete + agentic edits.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "bartowski/mistralai_Devstral-Small-2507-GGUF",
+        "filenamePattern": "mistralai_Devstral-Small-2507-{quant}.gguf"
+      },
+      "contextLength": 131072,
+      "supportsTools": true,
+      "supportsFIM": true,
+      "recommendedDraftIds": [],
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 14.3,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 16.8,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 25,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 16,
+        "minRamGB": 24,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "deepseek-r1-distill-qwen-14b",
+      "displayName": "DeepSeek R1 Distill Qwen 14B",
+      "family": "deepseek",
+      "category": "reasoning",
+      "description": "Reasoning-tuned distill of Qwen 14B. Strong on math + multi-step problems. Slower due to think tokens.",
+      "license": "mit",
+      "huggingface": {
+        "repoId": "bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF",
+        "filenamePattern": "DeepSeek-R1-Distill-Qwen-14B-{quant}.gguf"
+      },
+      "contextLength": 32768,
+      "supportsTools": false,
+      "supportsFIM": false,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 8.99,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 10.5,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 15.7,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 12,
+        "minRamGB": 16,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "qwen3-4b",
+      "displayName": "Qwen 3 4B",
+      "family": "qwen",
+      "category": "general",
+      "description": "Tiny but capable. Great for low-VRAM laptops or fast chat on bigger machines.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "Qwen/Qwen3-4B-GGUF",
+        "filenamePattern": "Qwen3-4B-{quant}.gguf"
+      },
+      "contextLength": 32768,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 2.5,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 2.89,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 4.31,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 4,
+        "minRamGB": 8,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "qwen2.5-coder-1.5b",
+      "displayName": "Qwen 2.5 Coder 1.5B",
+      "family": "qwen",
+      "category": "code",
+      "description": "Tiny FIM model — fast autocomplete on integrated graphics or low-VRAM laptops. Also usable as a speculative-decoding draft model for the Qwen2.5-Coder family (7B/14B/32B targets).",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF",
+        "filenamePattern": "qwen2.5-coder-1.5b-instruct-{quant_lower}.gguf"
+      },
+      "contextLength": 32768,
+      "supportsTools": true,
+      "supportsFIM": true,
+      "isDraftCapable": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 1.12,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 1.29,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 1.89,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 2,
+        "minRamGB": 4,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "smollm-3b",
+      "displayName": "SmolLM 1.7B",
+      "family": "smollm",
+      "category": "general",
+      "description": "Compact general chat model. Fits on integrated graphics. Good baseline for low-end hardware.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "bartowski/SmolLM2-1.7B-Instruct-GGUF",
+        "filenamePattern": "SmolLM2-1.7B-Instruct-{quant}.gguf"
+      },
+      "contextLength": 8192,
+      "supportsTools": false,
+      "supportsFIM": false,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 1.06,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 1.23,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 1.82,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 2,
+        "minRamGB": 4,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "smollm3-3b",
+      "displayName": "SmolLM3 3B",
+      "family": "smollm",
+      "category": "general",
+      "description": "HuggingFace's SmolLM3 3B — a current-gen small model with dual-mode reasoning and tool calling. Runs on very low VRAM; a strong pick for laptops and integrated graphics.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "unsloth/SmolLM3-3B-GGUF",
+        "filenamePattern": "SmolLM3-3B-{quant}.gguf"
+      },
+      "contextLength": 65536,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 1.78,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 2.06,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 3.05,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 4,
+        "minRamGB": 8,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "llava-1.6-mistral-7b",
+      "displayName": "LLaVA 1.6 Mistral 7B (Vision)",
+      "family": "llama",
+      "category": "vision",
+      "description": "Vision-language model based on Mistral 7B. Captures + describes images, reads UI screenshots, identifies text and elements. Pairs with the Preview tab so the agent can see what it's editing.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "cjpais/llava-1.6-mistral-7b-gguf",
+        "filenamePattern": "llava-v1.6-mistral-7b.{quant}.gguf"
+      },
+      "mmproj": {
+        "repoId": "cjpais/llava-1.6-mistral-7b-gguf",
+        "filename": "mmproj-model-f16.gguf",
+        "sizeGB": 0.6
+      },
+      "contextLength": 32768,
+      "supportsTools": false,
+      "supportsFIM": false,
+      "vision": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 4.37,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 5.13,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 7.7,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 8,
+        "minRamGB": 16,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "moondream2",
+      "displayName": "Moondream2 (Small Vision)",
+      "family": "moondream",
+      "category": "vision",
+      "description": "1.8B vision model — fast, low VRAM. Good for quick visual descriptions and rough OCR. Use this on small GPUs or when latency matters more than vision quality.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "moondream/moondream2-gguf",
+        "filenamePattern": "moondream2-text-model-f16.gguf"
+      },
+      "mmproj": {
+        "repoId": "moondream/moondream2-gguf",
+        "filename": "moondream2-mmproj-f16.gguf",
+        "sizeGB": 0.91
+      },
+      "contextLength": 2048,
+      "supportsTools": false,
+      "supportsFIM": false,
+      "vision": true,
+      "quants": [
+        {
+          "id": "f16",
+          "sizeGB": 2.84,
+          "label": "f16 (only quant available)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 4,
+        "minRamGB": 8,
+        "preferredQuant": "f16"
+      }
+    },
+    {
+      "id": "qwen2.5-vl-7b-instruct",
+      "displayName": "Qwen2.5-VL 7B (Vision)",
+      "family": "qwen",
+      "category": "vision",
+      "description": "Qwen's 7B vision-language model — strong OCR, document and screenshot understanding, and chart/diagram reading. Higher visual quality than LLaVA 1.6 at a similar size; the best general-purpose VLM in the catalog for reading UI and text in images.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "ggml-org/Qwen2.5-VL-7B-Instruct-GGUF",
+        "filenamePattern": "Qwen2.5-VL-7B-Instruct-{quant}.gguf"
+      },
+      "mmproj": {
+        "repoId": "ggml-org/Qwen2.5-VL-7B-Instruct-GGUF",
+        "filename": "mmproj-Qwen2.5-VL-7B-Instruct-f16.gguf",
+        "sizeGB": 1.39
+      },
+      "contextLength": 32768,
+      "supportsTools": false,
+      "supportsFIM": false,
+      "vision": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 4.68,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 8.1,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 8,
+        "minRamGB": 16,
+        "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
+      "id": "qwen3-vl-8b",
+      "displayName": "Qwen3-VL 8B (Vision)",
+      "family": "qwen",
+      "category": "vision",
+      "description": "Qwen3's 8B vision-language model — the current-generation successor to Qwen2.5-VL. Strong OCR, document/screenshot understanding, and chart reading. The best general-purpose VLM in the catalog for reading UI and text in images.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "Qwen/Qwen3-VL-8B-Instruct-GGUF",
+        "filenamePattern": "Qwen3VL-8B-Instruct-{quant}.gguf"
+      },
+      "mmproj": {
+        "repoId": "Qwen/Qwen3-VL-8B-Instruct-GGUF",
+        "filename": "mmproj-Qwen3VL-8B-Instruct-F16.gguf",
+        "sizeGB": 1.4
+      },
+      "contextLength": 32768,
+      "supportsTools": false,
+      "supportsFIM": false,
+      "vision": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 5,
+          "label": "Q4_K_M (smaller, good quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 8.7,
+          "label": "Q8_0 (high quality)"
+        },
+        {
+          "id": "F16",
+          "sizeGB": 16.4,
+          "label": "F16 (full precision)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 8,
+        "minRamGB": 16,
+        "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
+      "id": "gemma-4-e4b",
+      "displayName": "Gemma 4 E4B (Vision)",
+      "family": "gemma",
+      "category": "vision",
+      "description": "Google's Gemma 4 E4B — a compact, natively multimodal model (text + vision) that runs on small GPUs. Reads screenshots, documents, and charts.",
+      "license": "gemma",
+      "huggingface": {
+        "repoId": "ggml-org/gemma-4-E4B-it-GGUF",
+        "filenamePattern": "gemma-4-E4B-it-{quant}.gguf"
+      },
+      "mmproj": {
+        "repoId": "ggml-org/gemma-4-E4B-it-GGUF",
+        "filename": "mmproj-gemma-4-E4B-it-Q8_0.gguf",
+        "sizeGB": 0.9
+      },
+      "contextLength": 131072,
+      "supportsTools": false,
+      "_toolsNote": "Gemma family is pinned to nativeFunctionCalling=false in ModelProfileService (json-fenced format) — supportsTools:false here matches that. Gemma degenerates into thinking-only output after a few native tool calls (Joe-tested, same as gemma-3-27b).",
+      "supportsFIM": false,
+      "vision": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 2.9,
+          "label": "Q4_K_M (smaller, good quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 4.6,
+          "label": "Q8_0 (high quality)"
+        },
+        {
+          "id": "bf16",
+          "sizeGB": 8.6,
+          "label": "bf16 (full precision)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 6,
+        "minRamGB": 8,
+        "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
+      "id": "qwen3-coder-30b-a3b",
+      "displayName": "Qwen3-Coder 30B A3B (MoE)",
+      "family": "qwen",
+      "category": "code",
+      "description": "Qwen3's flagship open code model — mixture-of-experts (30B total, 3B active) for fast, high-quality code generation, FIM, and agentic edits. The current top local coding pick for 24GB+ cards.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF",
+        "filenamePattern": "Qwen3-Coder-30B-A3B-Instruct-{quant}.gguf"
+      },
+      "contextLength": 262144,
+      "supportsTools": true,
+      "supportsFIM": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 17.28,
+          "label": "Q4_K_M (recommended — fits 24GB)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 20.23,
+          "label": "Q5_K_M (higher quality)"
+        },
+        {
+          "id": "Q6_K",
+          "sizeGB": 23.37,
+          "label": "Q6_K (high quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 30.25,
+          "label": "Q8_0 (highest quality, 32GB+ VRAM)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 24,
+        "minRamGB": 32,
+        "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
+      "id": "gemma-4-12b",
+      "displayName": "Gemma 4 12B (Vision)",
+      "family": "gemma",
+      "category": "vision",
+      "description": "Google's Gemma 4 12B — a natively multimodal model (text + vision) with strong general chat plus screenshot, document, and chart reading. A capable mid-size VLM for 12GB+ cards.",
+      "license": "gemma",
+      "huggingface": {
+        "repoId": "unsloth/gemma-4-12b-it-GGUF",
+        "filenamePattern": "gemma-4-12b-it-{quant}.gguf"
+      },
+      "mmproj": {
+        "repoId": "unsloth/gemma-4-12b-it-GGUF",
+        "filename": "mmproj-F16.gguf",
+        "sizeGB": 0.16
+      },
+      "contextLength": 262144,
+      "supportsTools": false,
+      "_toolsNote": "Gemma family is pinned to nativeFunctionCalling=false in ModelProfileService — supportsTools:false matches that. Gemma degenerates into thinking-only output after a few native tool calls (Joe-tested, same as gemma-3-27b / gemma-4-e4b).",
+      "supportsFIM": false,
+      "vision": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 6.63,
+          "label": "Q4_K_M (recommended)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 7.83,
+          "label": "Q5_K_M (higher quality)"
+        },
+        {
+          "id": "Q6_K",
+          "sizeGB": 9.11,
+          "label": "Q6_K (high quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 11.8,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 12,
+        "minRamGB": 16,
+        "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
+      "id": "deepseek-r1-0528-qwen3-8b",
+      "displayName": "DeepSeek R1 0528 Qwen3 8B",
+      "family": "deepseek",
+      "category": "reasoning",
+      "description": "DeepSeek's R1-0528 reasoning distilled into Qwen3-8B — SOTA chain-of-thought quality at 8B, runs on 8GB cards. Slower output due to think tokens. Stronger than the older R1 Qwen distills at the same size.",
+      "license": "mit",
+      "huggingface": {
+        "repoId": "unsloth/DeepSeek-R1-0528-Qwen3-8B-GGUF",
+        "filenamePattern": "DeepSeek-R1-0528-Qwen3-8B-{quant}.gguf"
+      },
+      "contextLength": 131072,
+      "supportsTools": false,
+      "supportsFIM": false,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 4.68,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 5.45,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q6_K",
+          "sizeGB": 6.26,
+          "label": "Q6_K (high quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 8.11,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 8,
+        "minRamGB": 16,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "qwen3.5-9b",
+      "displayName": "Qwen 3.5 9B",
+      "family": "qwen",
+      "category": "general",
+      "description": "Qwen3.5 9B — a strong current-generation general chat + tool-calling model that runs comfortably on 8GB cards. A good all-round default for mid-tier hardware.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "bartowski/Qwen_Qwen3.5-9B-GGUF",
+        "filenamePattern": "Qwen_Qwen3.5-9B-{quant}.gguf"
+      },
+      "contextLength": 262144,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 5.75,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 6.62,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q6_K",
+          "sizeGB": 7.41,
+          "label": "Q6_K (high quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 9.13,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 8,
+        "minRamGB": 16,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
+      "id": "qwen3-vl-30b-a3b",
+      "displayName": "Qwen3-VL 30B A3B (Vision, MoE)",
+      "family": "qwen",
+      "category": "vision",
+      "description": "Qwen3's large vision-language MoE (30B total, 3B active) — the highest-quality VLM in the catalog for OCR, document/screenshot understanding, and chart/diagram reading. For 24GB+ cards.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "bartowski/Qwen_Qwen3-VL-30B-A3B-Instruct-GGUF",
+        "filenamePattern": "Qwen_Qwen3-VL-30B-A3B-Instruct-{quant}.gguf"
+      },
+      "mmproj": {
+        "repoId": "bartowski/Qwen_Qwen3-VL-30B-A3B-Instruct-GGUF",
+        "filename": "mmproj-Qwen_Qwen3-VL-30B-A3B-Instruct-f16.gguf",
+        "sizeGB": 1.01
+      },
+      "contextLength": 262144,
+      "supportsTools": false,
+      "supportsFIM": false,
+      "vision": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 17.35,
+          "label": "Q4_K_M (recommended — fits 24GB)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 20.25,
+          "label": "Q5_K_M (higher quality)"
+        },
+        {
+          "id": "Q6_K",
+          "sizeGB": 23.38,
+          "label": "Q6_K (high quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 30.25,
+          "label": "Q8_0 (highest quality, 32GB+ VRAM)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 24,
+        "minRamGB": 32,
+        "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
+      "id": "qwen3-vl-32b",
+      "displayName": "Qwen3-VL 32B (Vision)",
+      "family": "qwen",
+      "category": "vision",
+      "description": "Qwen3's 32B dense vision-language model — the highest-quality dense VLM in the catalog for OCR, document/screenshot understanding, and chart/diagram reading. For 24GB+ cards. (Qwen3-VL has no 7B dense variant; the 8B entry above is the small-tier pick.)",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "bartowski/Qwen_Qwen3-VL-32B-Instruct-GGUF",
+        "filenamePattern": "Qwen_Qwen3-VL-32B-Instruct-{quant}.gguf"
+      },
+      "mmproj": {
+        "repoId": "bartowski/Qwen_Qwen3-VL-32B-Instruct-GGUF",
+        "filename": "mmproj-Qwen_Qwen3-VL-32B-Instruct-f16.gguf",
+        "sizeGB": 1.2
+      },
+      "contextLength": 262144,
+      "supportsTools": false,
+      "supportsFIM": false,
+      "vision": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 19.8,
+          "label": "Q4_K_M (recommended — fits 24GB)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 23.2,
+          "label": "Q5_K_M (higher quality)"
+        },
+        {
+          "id": "Q6_K",
+          "sizeGB": 26.9,
+          "label": "Q6_K (high quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 34.8,
+          "label": "Q8_0 (highest quality, 48GB+ VRAM)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 24,
+        "minRamGB": 32,
+        "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
+      "id": "minicpm-v-4.5",
+      "displayName": "MiniCPM-V 4.5 (8B Vision)",
+      "family": "minicpm",
+      "category": "vision",
+      "description": "OpenBMB's MiniCPM-V 4.5 — an efficient 8B vision-language model with strong OCR and high-resolution image / document understanding. Runs on 8GB+ cards. Needs a recent llama.cpp build with MiniCPM-V support.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "openbmb/MiniCPM-V-4_5-gguf",
+        "filenamePattern": "MiniCPM-V-4_5-{quant}.gguf"
+      },
+      "mmproj": {
+        "repoId": "openbmb/MiniCPM-V-4_5-gguf",
+        "filename": "mmproj-model-f16.gguf",
+        "sizeGB": 1.1
+      },
+      "contextLength": 32768,
+      "supportsTools": false,
+      "supportsFIM": false,
+      "vision": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 5.03,
+          "label": "Q4_K_M (recommended)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 5.85,
+          "label": "Q5_K_M (higher quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 8.71,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 8,
+        "minRamGB": 16,
+        "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
+      "id": "qwen3-1.7b",
+      "status": "coming-soon",
+      "displayName": "Qwen 3 1.7B (Draft)",
+      "family": "qwen",
+      "category": "general",
+      "description": "Qwen 3 1.7B — the same tokenizer + chat template as Qwen3-8B/14B/30B, making it ideal as a speculative-decoding draft model for those targets. Unlocks 1.3–1.5× throughput on Qwen3 chat + code models with no quality loss. Downloadable once chunk 1b draft-flag wiring ships.",
+      "license": "apache-2.0",
+      "contextLength": 32768,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "isDraftCapable": true
+    },
+    {
+      "id": "llama-3.2-1b",
+      "status": "coming-soon",
+      "displayName": "Llama 3.2 1B (Draft)",
+      "family": "llama",
+      "category": "general",
+      "description": "Meta's Llama 3.2 1B — shares the Llama 3 tokenizer with Llama 3.1-8B, Llama 3.3-70B, Mistral Small 24B, and Devstral 24B, making it a natural draft companion for all those targets. Downloadable once chunk 1b draft-flag wiring ships.",
+      "license": "llama-community",
+      "contextLength": 131072,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "isDraftCapable": true
+    },
+    {
+      "id": "qwen3-coder-next-80b",
+      "displayName": "Qwen3-Coder-Next 80B (MoE)",
+      "family": "qwen",
+      "category": "code",
+      "description": "Qwen's next-generation 80B code MoE — the flagship local coder for 48GB+ VRAM cards. Ships as a 4-shard GGUF; Bodega downloads all shards and loads them as one model. Q4_K_M is ~45 GB across four files.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "Qwen/Qwen3-Coder-Next-GGUF",
+        "filenamePattern": "Qwen3-Coder-Next-{quant}-00001-of-00004.gguf",
+        "shardFilenamePattern": "Qwen3-Coder-Next-{quant}-{shard}-of-00004.gguf"
+      },
+      "contextLength": 262144,
+      "supportsTools": true,
+      "supportsFIM": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 45.09,
+          "shards": 4,
+          "label": "Q4_K_M (4 shards — needs 48GB+ VRAM)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 48,
+        "minRamGB": 64,
+        "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
+      "id": "deepseek-v4",
+      "status": "coming-soon",
+      "displayName": "DeepSeek V4",
+      "family": "deepseek",
+      "category": "reasoning",
+      "description": "DeepSeek's next flagship MoE (~172GB total weight). Cloud-only via the DeepSeek API preset — no mainstream-llama.cpp GGUF available at this size.",
+      "license": "deepseek",
+      "contextLength": 65536,
+      "supportsTools": true,
+      "supportsFIM": false
+    }
+  ],
+  "wellKnownOverlay": {}
+}
