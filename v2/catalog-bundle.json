@@ -1,9 +1,9 @@
 {
-  "version": "mc1.6.0+llama1.9.0",
-  "lastUpdated": "2026-07-09",
+  "version": "mc1.6.1+llama1.9.0",
+  "lastUpdated": "2026-08-05",
   "modelCatalog": {
-    "version": "1.6.0",
-    "lastUpdated": "2026-06-13",
+    "version": "1.6.1",
+    "lastUpdated": "2026-08-05",
     "local": [
       {
         "name": "qwen3-coder-next",
@@ -1209,10 +1209,50 @@
         }
       },
       {
+        "name": "claude-opus-5",
+        "displayName": "Claude Opus 5",
+        "provider": "anthropic",
+        "description": "Anthropic's new Opus flagship (2026-07-24). 1M context (native, no separate 1M variant), 128K max output. Adaptive thinking only (no legacy toggle). Same $5/$25 pricing as Opus 4.8 — a capability refresh, not a price change. Freshest knowledge cutoff in the Claude lineup (May 2026).",
+        "pricing": {
+          "inputPerMTok": 5,
+          "outputPerMTok": 25
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1000000,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "claude-opus-5-fast",
+        "displayName": "Claude Opus 5 Fast",
+        "provider": "anthropic",
+        "description": "Claude Opus 5, fast tier — runs ~2.5x default speed at 2x the base price ($10/$50 per MTok). Same capabilities as Opus 5.",
+        "pricing": {
+          "inputPerMTok": 10,
+          "outputPerMTok": 50
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1000000,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
         "name": "claude-opus-4-8",
         "displayName": "Claude Opus 4.8",
         "provider": "anthropic",
-        "description": "Anthropic's most capable Opus model (2026-05-28). 200K context. Deep adaptive reasoning, agentic coding — ~4x less likely to ship code flaws than 4.7. For 1M context, pick the (1M context) variant.",
+        "description": "Anthropic's previous Opus flagship (2026-05-28). NOT deprecated — still current. 200K context. Deep adaptive reasoning, agentic coding — ~4x less likely to ship code flaws than 4.7. For 1M context, pick the (1M context) variant.",
         "pricing": {
           "inputPerMTok": 5,
           "outputPerMTok": 25

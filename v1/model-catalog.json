@@ -1,6 +1,6 @@
 {
-  "version": "1.6.0",
-  "lastUpdated": "2026-06-13",
+  "version": "1.6.1",
+  "lastUpdated": "2026-08-05",
   "local": [
     {
       "name": "qwen3-coder-next",
@@ -1206,10 +1206,50 @@
       }
     },
     {
+      "name": "claude-opus-5",
+      "displayName": "Claude Opus 5",
+      "provider": "anthropic",
+      "description": "Anthropic's new Opus flagship (2026-07-24). 1M context (native, no separate 1M variant), 128K max output. Adaptive thinking only (no legacy toggle). Same $5/$25 pricing as Opus 4.8 — a capability refresh, not a price change. Freshest knowledge cutoff in the Claude lineup (May 2026).",
+      "pricing": {
+        "inputPerMTok": 5,
+        "outputPerMTok": 25
+      },
+      "capabilities": [
+        "tools",
+        "thinking",
+        "vision",
+        "code"
+      ],
+      "contextWindow": 1000000,
+      "benchmarks": {
+        "sweBench": null
+      }
+    },
+    {
+      "name": "claude-opus-5-fast",
+      "displayName": "Claude Opus 5 Fast",
+      "provider": "anthropic",
+      "description": "Claude Opus 5, fast tier — runs ~2.5x default speed at 2x the base price ($10/$50 per MTok). Same capabilities as Opus 5.",
+      "pricing": {
+        "inputPerMTok": 10,
+        "outputPerMTok": 50
+      },
+      "capabilities": [
+        "tools",
+        "thinking",
+        "vision",
+        "code"
+      ],
+      "contextWindow": 1000000,
+      "benchmarks": {
+        "sweBench": null
+      }
+    },
+    {
       "name": "claude-opus-4-8",
       "displayName": "Claude Opus 4.8",
       "provider": "anthropic",
-      "description": "Anthropic's most capable Opus model (2026-05-28). 200K context. Deep adaptive reasoning, agentic coding — ~4x less likely to ship code flaws than 4.7. For 1M context, pick the (1M context) variant.",
+      "description": "Anthropic's previous Opus flagship (2026-05-28). NOT deprecated — still current. 200K context. Deep adaptive reasoning, agentic coding — ~4x less likely to ship code flaws than 4.7. For 1M context, pick the (1M context) variant.",
       "pricing": {
         "inputPerMTok": 5,
         "outputPerMTok": 25
@@ -1388,8 +1428,8 @@
       "provider": "openrouter",
       "description": "Mistral's dedicated FIM code model (2025-08). 262K context, native FIM tokens, tools. Pin to codestral-2508 — the codestral-latest alias maps to an older 32K build. Available via Mistral API and OpenRouter.",
       "pricing": {
-        "inputPerMTok": 0.30,
-        "outputPerMTok": 0.90
+        "inputPerMTok": 0.3,
+        "outputPerMTok": 0.9
       },
       "capabilities": [
         "tools",
@@ -1425,8 +1465,8 @@
       "provider": "xai",
       "description": "xAI's current flagship (public API 2026-07-08). 500K context, always-on reasoning, function calling / web search / code execution. OpenAI-compatible API.",
       "pricing": {
-        "inputPerMTok": 2.00,
-        "outputPerMTok": 6.00
+        "inputPerMTok": 2,
+        "outputPerMTok": 6
       },
       "capabilities": [
         "tools",
@@ -1464,8 +1504,8 @@
       "provider": "xai",
       "description": "xAI's dedicated agentic coding model. 262K context, vision + tools + thinking. OpenAI-compatible API.",
       "pricing": {
-        "inputPerMTok": 1.00,
-        "outputPerMTok": 2.00
+        "inputPerMTok": 1,
+        "outputPerMTok": 2
       },
       "capabilities": [
         "tools",
@@ -1485,7 +1525,7 @@
       "description": "Moonshot AI's coder flagship (GA 2026). 1T MoE / 32B active, 256K context. Thinking is mandatory (always-on). Caches at $0.19/MTok input. Available via openrouter.ai/moonshotai/kimi-k2.7-code.",
       "pricing": {
         "inputPerMTok": 0.95,
-        "outputPerMTok": 4.00
+        "outputPerMTok": 4
       },
       "capabilities": [
         "tools",
@@ -1523,8 +1563,8 @@
       "provider": "zai",
       "description": "Z.ai's current flagship (api.z.ai). 1M context (IndexShare sparse attention), 128K output, native thinking (High/Max effort) + tools. OpenAI-compatible API.",
       "pricing": {
-        "inputPerMTok": 1.40,
-        "outputPerMTok": 4.40
+        "inputPerMTok": 1.4,
+        "outputPerMTok": 4.4
       },
       "capabilities": [
         "tools",
