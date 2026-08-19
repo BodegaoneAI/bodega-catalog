@@ -1,9 +1,9 @@
 {
-  "version": "mc1.6.1+llama1.9.0",
-  "lastUpdated": "2026-08-05",
+  "version": "mc1.7.1+llama1.12.0",
+  "lastUpdated": "2026-08-18",
   "modelCatalog": {
-    "version": "1.6.1",
-    "lastUpdated": "2026-08-05",
+    "version": "1.7.1",
+    "lastUpdated": "2026-08-18",
     "local": [
       {
         "name": "qwen3-coder-next",
@@ -1154,8 +1154,8 @@
         "provider": "anthropic",
         "description": "Anthropic's new flagship (added 2026-06-30). 1M context, 128K output. Adaptive thinking, agentic coding and tool use.",
         "pricing": {
-          "inputPerMTok": 3,
-          "outputPerMTok": 15
+          "inputPerMTok": 2,
+          "outputPerMTok": 10
         },
         "capabilities": [
           "tools",
@@ -1368,6 +1368,26 @@
         }
       },
       {
+        "name": "gemini-3.7-flash",
+        "displayName": "Gemini 3.7 Flash",
+        "provider": "google",
+        "description": "Google's newest Flash. 1M context, 64K output, native tools + vision + thinking (measured live 2026-08-14). Promotional pricing through 2026-12-31; list price doubles 2027-01-01.",
+        "pricing": {
+          "inputPerMTok": 0.75,
+          "outputPerMTok": 3.75
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1048576,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
         "name": "gemini-3.5-flash",
         "displayName": "Gemini 3.5 Flash",
         "provider": "google",
@@ -1391,10 +1411,32 @@
         "name": "deepseek-v4-pro",
         "displayName": "DeepSeek V4 Pro",
         "provider": "deepseek",
-        "description": "DeepSeek's flagship (released 2026-04-24). 1M context, extended chain-of-thought, top agentic tool calling.",
+        "description": "DeepSeek's flagship (GA 2026-08-13). 1M context, 384K output, extended chain-of-thought, top agentic tool calling. Base pricing below is off-peak-equivalent for display; from 2026-08-16T16:00:00Z DeepSeek bills peak/off-peak tiers (see periods) — resolve the exact rate for a given instant with pricingTiers.resolveRateCard, same as CloudCostTracker.",
         "pricing": {
           "inputPerMTok": 0.435,
-          "outputPerMTok": 0.87
+          "outputPerMTok": 0.87,
+          "periods": [
+            {
+              "effectiveFrom": "2026-08-16T16:00:00Z",
+              "inputPerMTok": 0.66,
+              "outputPerMTok": 1.98
+            },
+            {
+              "effectiveFrom": "2026-08-16T16:00:00Z",
+              "peakHoursUtc": [
+                [
+                  1,
+                  4
+                ],
+                [
+                  6,
+                  10
+                ]
+              ],
+              "inputPerMTok": 1.32,
+              "outputPerMTok": 3.96
+            }
+          ]
         },
         "capabilities": [
           "tools",
@@ -1410,10 +1452,32 @@
         "name": "deepseek-v4-flash",
         "displayName": "DeepSeek V4 Flash",
         "provider": "deepseek",
-        "description": "DeepSeek's faster V4 model. 1M context, thinking-capable, best cost/speed ratio.",
+        "description": "DeepSeek's faster V4 model. 1M context, thinking-capable, best cost/speed ratio. From 2026-08-16T16:00:00Z DeepSeek bills peak/off-peak tiers (see periods) — resolve the exact rate for a given instant with pricingTiers.resolveRateCard, same as CloudCostTracker.",
         "pricing": {
           "inputPerMTok": 0.14,
-          "outputPerMTok": 0.28
+          "outputPerMTok": 0.28,
+          "periods": [
+            {
+              "effectiveFrom": "2026-08-16T16:00:00Z",
+              "inputPerMTok": 0.22,
+              "outputPerMTok": 0.66
+            },
+            {
+              "effectiveFrom": "2026-08-16T16:00:00Z",
+              "peakHoursUtc": [
+                [
+                  1,
+                  4
+                ],
+                [
+                  6,
+                  10
+                ]
+              ],
+              "inputPerMTok": 0.44,
+              "outputPerMTok": 1.32
+            }
+          ]
         },
         "capabilities": [
           "tools",
@@ -1450,8 +1514,8 @@
         "provider": "openrouter",
         "description": "Mistral Large 3. Strong coding and multilingual capabilities. 262K context.",
         "pricing": {
-          "inputPerMTok": 2,
-          "outputPerMTok": 6
+          "inputPerMTok": 0.5,
+          "outputPerMTok": 1.5
         },
         "capabilities": [
           "tools",
@@ -1594,6 +1658,43 @@
           "code"
         ],
         "contextWindow": 200000,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "qwen3.8-max",
+        "displayName": "Qwen3.8 Max",
+        "provider": "qwen",
+        "description": "Alibaba's new flagship (GA 2026-08-03, DashScope). 1M context, 131K max output, extended chain-of-thought (suppressible via enable_thinking:false). Not yet on OpenRouter — DashScope-only so far. Pricing is an ESTIMATE (qwen3.7-max sibling rate) — no published DashScope price found yet.",
+        "pricing": {
+          "inputPerMTok": 1.6,
+          "outputPerMTok": 6.4
+        },
+        "capabilities": [
+          "tools",
+          "thinking"
+        ],
+        "contextWindow": 1000000,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "qwen3.7-flash",
+        "displayName": "Qwen3.7 Flash",
+        "provider": "qwen",
+        "description": "Alibaba's cheap/fast vision-reasoning tier (created 2026-07-27, live-verified 2026-08-03). 1M context, 131K max output (DashScope-measured ceiling), text+image+video->text input, reasoning default-on. Also available via OpenRouter (qwen/qwen3.7-flash).",
+        "pricing": {
+          "inputPerMTok": 0.03,
+          "outputPerMTok": 0.13
+        },
+        "capabilities": [
+          "tools",
+          "vision",
+          "thinking"
+        ],
+        "contextWindow": 1000000,
         "benchmarks": {
           "sweBench": null
         }
@@ -2505,7 +2606,7 @@
       "displayName": "Qwen3-VL 8B (Vision)",
       "family": "qwen",
       "category": "vision",
-      "description": "Qwen3's 8B vision-language model — the current-generation successor to Qwen2.5-VL. Strong OCR, document/screenshot understanding, and chart reading. The best general-purpose VLM in the catalog for reading UI and text in images.",
+      "description": "Qwen3's 8B vision-language model — the current-generation successor to Qwen2.5-VL. Strong OCR, document/screenshot understanding, and chart reading. The best general-purpose VLM in the catalog for reading UI and text in images. Needs llama.cpp b6887+: that build is the first release containing the qwen3vl architecture (ggml-org/llama.cpp#16780, merged 2025-10-30) — older binaries cannot load the GGUF at all. The gate is the text architecture, not vision; the mmproj is a separate requirement.",
       "license": "apache-2.0",
       "huggingface": {
         "repoId": "Qwen/Qwen3-VL-8B-Instruct-GGUF",
@@ -2519,6 +2620,7 @@
       "contextLength": 32768,
       "supportsTools": false,
       "supportsFIM": false,
+      "minBuild": 6887,
       "vision": true,
       "quants": [
         {
@@ -2548,7 +2650,7 @@
       "displayName": "Gemma 4 E4B (Vision)",
       "family": "gemma",
       "category": "vision",
-      "description": "Google's Gemma 4 E4B — a compact, natively multimodal model (text + vision) that runs on small GPUs. Reads screenshots, documents, and charts.",
+      "description": "Google's Gemma 4 E4B — a compact, natively multimodal model (text + vision) that runs on small GPUs. Reads screenshots, documents, and charts. Needs llama.cpp b8637+: that build is the first release containing the gemma4 architecture (ggml-org/llama.cpp#21309, merged 2026-04-02) — older binaries do not know the arch string and cannot load the GGUF at all. Separately (NOT part of the gate, the model loads without it): the Gemma 4 tokenizer fix #21343 first ships in b8648, so b8637–b8646 tokenize incorrectly.",
       "license": "gemma",
       "huggingface": {
         "repoId": "ggml-org/gemma-4-E4B-it-GGUF",
@@ -2563,6 +2665,7 @@
       "supportsTools": false,
       "_toolsNote": "Gemma family is pinned to nativeFunctionCalling=false in ModelProfileService (json-fenced format) — supportsTools:false here matches that. Gemma degenerates into thinking-only output after a few native tool calls (Joe-tested, same as gemma-3-27b).",
       "supportsFIM": false,
+      "minBuild": 8637,
       "vision": true,
       "quants": [
         {
@@ -2634,7 +2737,7 @@
       "displayName": "Gemma 4 12B (Vision)",
       "family": "gemma",
       "category": "vision",
-      "description": "Google's Gemma 4 12B — a natively multimodal model (text + vision) with strong general chat plus screenshot, document, and chart reading. A capable mid-size VLM for 12GB+ cards.",
+      "description": "Google's Gemma 4 12B — a natively multimodal model (text + vision) with strong general chat plus screenshot, document, and chart reading. A capable mid-size VLM for 12GB+ cards. Needs llama.cpp b8637+: that build is the first release containing the gemma4 architecture (ggml-org/llama.cpp#21309, merged 2026-04-02) — older binaries cannot load the GGUF at all. Gemma 4 registers one arch for both dense and E-series, so this shares the E4B gate. Separately (NOT part of the gate): tokenizer fix #21343 first ships in b8648.",
       "license": "gemma",
       "huggingface": {
         "repoId": "unsloth/gemma-4-12b-it-GGUF",
@@ -2649,6 +2752,7 @@
       "supportsTools": false,
       "_toolsNote": "Gemma family is pinned to nativeFunctionCalling=false in ModelProfileService — supportsTools:false matches that. Gemma degenerates into thinking-only output after a few native tool calls (Joe-tested, same as gemma-3-27b / gemma-4-e4b).",
       "supportsFIM": false,
+      "minBuild": 8637,
       "vision": true,
       "quants": [
         {
@@ -2725,7 +2829,7 @@
       "displayName": "Qwen 3.5 9B",
       "family": "qwen",
       "category": "general",
-      "description": "Qwen3.5 9B — a strong current-generation general chat + tool-calling model that runs comfortably on 8GB cards. A good all-round default for mid-tier hardware.",
+      "description": "Qwen3.5 9B — a strong current-generation general chat + tool-calling model that runs comfortably on 8GB cards. A good all-round default for mid-tier hardware. Needs llama.cpp b7990+: that build is the first release containing the qwen35 architecture (ggml-org/llama.cpp#19468, merged 2026-02-10) — note an earlier support PR (#19435) was reverted by #19453, so any lower build number is wrong. Below b7990 the GGUF cannot load. Separately (NOT part of the gate): a refactor in #19660 broke qwen3.5 tensor shapes until #19730 fixed it on 2026-02-19, so there is a known-bad window above this floor that a single minimum cannot express.",
       "license": "apache-2.0",
       "huggingface": {
         "repoId": "bartowski/Qwen_Qwen3.5-9B-GGUF",
@@ -2734,6 +2838,7 @@
       "contextLength": 262144,
       "supportsTools": true,
       "supportsFIM": false,
+      "minBuild": 7990,
       "quants": [
         {
           "id": "Q4_K_M",
@@ -2767,7 +2872,7 @@
       "displayName": "Qwen3-VL 30B A3B (Vision, MoE)",
       "family": "qwen",
       "category": "vision",
-      "description": "Qwen3's large vision-language MoE (30B total, 3B active) — the highest-quality VLM in the catalog for OCR, document/screenshot understanding, and chart/diagram reading. For 24GB+ cards.",
+      "description": "Qwen3's large vision-language MoE (30B total, 3B active) — the highest-quality VLM in the catalog for OCR, document/screenshot understanding, and chart/diagram reading. For 24GB+ cards. Needs llama.cpp b6887+: that build is the first release containing the qwen3vlmoe architecture, added by the same commit as the dense qwen3vl (ggml-org/llama.cpp#16780, merged 2025-10-30) — older binaries cannot load the GGUF at all.",
       "license": "apache-2.0",
       "huggingface": {
         "repoId": "bartowski/Qwen_Qwen3-VL-30B-A3B-Instruct-GGUF",
@@ -2781,6 +2886,7 @@
       "contextLength": 262144,
       "supportsTools": false,
       "supportsFIM": false,
+      "minBuild": 6887,
       "vision": true,
       "quants": [
         {
@@ -2815,7 +2921,7 @@
       "displayName": "Qwen3-VL 32B (Vision)",
       "family": "qwen",
       "category": "vision",
-      "description": "Qwen3's 32B dense vision-language model — the highest-quality dense VLM in the catalog for OCR, document/screenshot understanding, and chart/diagram reading. For 24GB+ cards. (Qwen3-VL has no 7B dense variant; the 8B entry above is the small-tier pick.)",
+      "description": "Qwen3's 32B dense vision-language model — the highest-quality dense VLM in the catalog for OCR, document/screenshot understanding, and chart/diagram reading. For 24GB+ cards. (Qwen3-VL has no 7B dense variant; the 8B entry above is the small-tier pick.) Needs llama.cpp b6887+: that build is the first release containing the qwen3vl architecture (ggml-org/llama.cpp#16780, merged 2025-10-30). Arch support is per-architecture, not per-size, so this shares the 8B gate.",
       "license": "apache-2.0",
       "huggingface": {
         "repoId": "bartowski/Qwen_Qwen3-VL-32B-Instruct-GGUF",
@@ -2829,6 +2935,7 @@
       "contextLength": 262144,
       "supportsTools": false,
       "supportsFIM": false,
+      "minBuild": 6887,
       "vision": true,
       "quants": [
         {
@@ -2863,7 +2970,7 @@
       "displayName": "MiniCPM-V 4.5 (8B Vision)",
       "family": "minicpm",
       "category": "vision",
-      "description": "OpenBMB's MiniCPM-V 4.5 — an efficient 8B vision-language model with strong OCR and high-resolution image / document understanding. Runs on 8GB+ cards. Needs a recent llama.cpp build with MiniCPM-V support.",
+      "description": "OpenBMB's MiniCPM-V 4.5 — an efficient 8B vision-language model with strong OCR and high-resolution image / document understanding. Runs on 8GB+ cards. Needs llama.cpp b6282+: that build is the first release supporting minicpmv projector version 6 (ggml-org/llama.cpp#15575, merged 2025-08-26). Unlike the other gates this is projector-side, not a text-architecture gate — it is enforced because older builds hit GGML_ABORT(\"Unknown minicpmv version\") and this entry always ships its mmproj. If the entry ever becomes runnable mmproj-less, revisit the gate.",
       "license": "apache-2.0",
       "huggingface": {
         "repoId": "openbmb/MiniCPM-V-4_5-gguf",
@@ -2877,6 +2984,7 @@
       "contextLength": 32768,
       "supportsTools": false,
       "supportsFIM": false,
+      "minBuild": 6282,
       "vision": true,
       "quants": [
         {
@@ -2902,37 +3010,205 @@
       }
     },
     {
-      "id": "qwen3-1.7b",
-      "status": "coming-soon",
-      "displayName": "Qwen 3 1.7B (Draft)",
-      "family": "qwen",
-      "category": "general",
-      "description": "Qwen 3 1.7B — the same tokenizer + chat template as Qwen3-8B/14B/30B, making it ideal as a speculative-decoding draft model for those targets. Unlocks 1.3–1.5× throughput on Qwen3 chat + code models with no quality loss. Downloadable once chunk 1b draft-flag wiring ships.",
+      "id": "muse-glimmer-30b",
+      "displayName": "Muse Glimmer 30B (Meta)",
+      "family": "muse",
+      "category": "vision",
+      "description": "Meta's 30B dense agentic model, distilled from Muse and built for always-on local agents — multi-step reasoning, tool use and vision in one model. Apache 2.0. Reasoning depth is set in the system prompt via 'Reasoning strength: low|medium|high|xhigh' (use high or xhigh for coding and agentic work); Meta's sampling is temp 1.0 / top_p 0.95 / top_k 64. Uses Meta's <|start|>...<|message|>...<|eot|> chat format — needs a llama.cpp build with Muse Glimmer support (ggml-org/llama.cpp#26841) so tool calls arrive natively; older builds reject them. Vision needs the mmproj file. Quant IDs carry unsloth's UD- prefix because that is the literal filename on the repo. Categorised 'vision' because the catalog requires vision:true entries to be, though it is primarily a general agentic model.",
       "license": "apache-2.0",
-      "contextLength": 32768,
-      "supportsTools": true,
-      "supportsFIM": false,
-      "isDraftCapable": true
-    },
-    {
-      "id": "llama-3.2-1b",
-      "status": "coming-soon",
-      "displayName": "Llama 3.2 1B (Draft)",
-      "family": "llama",
-      "category": "general",
-      "description": "Meta's Llama 3.2 1B — shares the Llama 3 tokenizer with Llama 3.1-8B, Llama 3.3-70B, Mistral Small 24B, and Devstral 24B, making it a natural draft companion for all those targets. Downloadable once chunk 1b draft-flag wiring ships.",
-      "license": "llama-community",
+      "huggingface": {
+        "repoId": "unsloth/Muse-Glimmer-30B-GGUF",
+        "filenamePattern": "Muse-Glimmer-30B-{quant}.gguf"
+      },
+      "mmproj": {
+        "repoId": "unsloth/Muse-Glimmer-30B-GGUF",
+        "filename": "mmproj-Muse-Glimmer-30B-Q8_0.gguf",
+        "sizeGB": 1.91
+      },
       "contextLength": 131072,
       "supportsTools": true,
       "supportsFIM": false,
-      "isDraftCapable": true
+      "minBuild": 10353,
+      "vision": true,
+      "quants": [
+        {
+          "id": "UD-Q3_K_XL",
+          "sizeGB": 12.44,
+          "label": "UD-Q3_K_XL (smallest usable)"
+        },
+        {
+          "id": "UD-Q4_K_XL",
+          "sizeGB": 14.79,
+          "label": "UD-Q4_K_XL (recommended)"
+        },
+        {
+          "id": "UD-Q5_K_M",
+          "sizeGB": 17.88,
+          "label": "UD-Q5_K_M (higher quality)"
+        },
+        {
+          "id": "UD-Q6_K_XL",
+          "sizeGB": 24.46,
+          "label": "UD-Q6_K_XL (high quality, 32GB+ VRAM)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 27.58,
+          "label": "Q8_0 (highest quality, 48GB+ VRAM)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 24,
+        "minRamGB": 32,
+        "preferredQuant": "UD-Q4_K_XL"
+      }
+    },
+    {
+      "id": "qwen3-1.7b",
+      "displayName": "Qwen 3 1.7B (Draft)",
+      "family": "qwen",
+      "category": "general",
+      "description": "Qwen 3 1.7B — the same tokenizer + chat template as Qwen3-8B/14B/30B, making it ideal as a speculative-decoding draft model for those targets. Unlocks 1.3–1.5× throughput on Qwen3 chat + code models with no quality loss. Pick it under Settings → llama.cpp → draft model; the spawn layer passes it as --model-draft. minBuild is deliberately UNSET: the qwen3 architecture predates every binary Bodega pins.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "unsloth/Qwen3-1.7B-GGUF",
+        "filenamePattern": "Qwen3-1.7B-{quant}.gguf"
+      },
+      "contextLength": 32768,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "isDraftCapable": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 1.03,
+          "label": "Q4_K_M (recommended draft)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 1.17,
+          "label": "Q5_K_M (higher quality)"
+        },
+        {
+          "id": "Q6_K",
+          "sizeGB": 1.32,
+          "label": "Q6_K (high quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 1.71,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 4,
+        "minRamGB": 8,
+        "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
+      "id": "llama-3.2-1b",
+      "displayName": "Llama 3.2 1B (Draft)",
+      "family": "llama",
+      "category": "general",
+      "description": "Meta's Llama 3.2 1B Instruct — shares the Llama 3 tokenizer with Llama 3.1-8B and Llama 3.3-70B, making it a natural draft companion for those targets. Pick it under Settings → llama.cpp → draft model; the spawn layer passes it as --model-draft. minBuild is deliberately UNSET: the llama architecture predates every binary Bodega pins.",
+      "license": "llama-community",
+      "huggingface": {
+        "repoId": "unsloth/Llama-3.2-1B-Instruct-GGUF",
+        "filenamePattern": "Llama-3.2-1B-Instruct-{quant}.gguf"
+      },
+      "contextLength": 131072,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "isDraftCapable": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 0.75,
+          "label": "Q4_K_M (recommended draft)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 0.85,
+          "label": "Q5_K_M (higher quality)"
+        },
+        {
+          "id": "Q6_K",
+          "sizeGB": 0.95,
+          "label": "Q6_K (high quality)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 1.23,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 4,
+        "minRamGB": 8,
+        "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
+      "id": "qwen3.8-27b",
+      "displayName": "Qwen 3.8 27B",
+      "family": "qwen",
+      "category": "vision",
+      "description": "Qwen's 27B dense vision-language model (Apache 2.0, August 2026) — 262K native context, native tool calling, and thinking on by default. Despite the 3.8 name it loads as the EXISTING qwen35 architecture: the model's own config.json declares architectures ['Qwen3_5ForConditionalGeneration'] / model_type 'qwen3_5', which llama.cpp's converter maps to MODEL_ARCH.QWEN35 for the text tower and to the Qwen3-VL vision model for the projector. So it needs llama.cpp b7990+: that build is the first release containing ggml-org/llama.cpp#19468 ('support qwen3.5 series', merged fc0fe400 2026-02-10), confirmed by ancestry — b7990 compares 'identical' to the merge commit and b7989 does not contain it. Do NOT use a lower number: the earlier #19435 was REVERTED by #19453. The same PR added the mtmd projector support (tools/mtmd/models/qwen3vl.cpp), so vision and text clear the gate at the same build. Vision needs the mmproj file. Reasoning depth: the chat template accepts reasoning_effort of xhigh (default) / medium / low ONLY and RAISES on any other value — Bodega does not send reasoning_effort to llama.cpp at all (the local wire is the enable_thinking boolean, see llamaCppReasoningWire.ts), so the template default xhigh always applies and the composer honestly shows an on/off toggle rather than a tier picker. MTP is deliberately not declared: this repo's GGUFs are the plain build, and supportsMtp on a file without MTP layers crashes the server. Context note: the 262K native window is clamped by vramSafeDefaultCtx, so the default context you actually get is set by your VRAM and the quant you pick, not by this number. On a 32GB card the default lands in the high teens of thousands of tokens on UD-Q4_K_XL and roughly twice that on UD-Q3_K_XL; a 24GB card on UD-Q4_K_XL falls to the 4096 floor, which is why 24GB cards should prefer UD-Q3_K_XL. These are DERIVED from vramSafeContextTokens over the quant sizes listed below (total VRAM minus a 4GB OS reserve and 1.5GB runtime overhead, 85% margin, fp16 KV at 2.5% of weights per 1K tokens) — they are not bench measurements on a physical card, and loading the mmproj lowers them further. The exact number for your machine is the one the app reports after load; raise it per-model in Settings if it fits.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "unsloth/Qwen3.8-27B-GGUF",
+        "filenamePattern": "Qwen3.8-27B-{quant}.gguf"
+      },
+      "mmproj": {
+        "repoId": "unsloth/Qwen3.8-27B-GGUF",
+        "filename": "mmproj-F16.gguf",
+        "sizeGB": 0.86
+      },
+      "contextLength": 262144,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "minBuild": 7990,
+      "vision": true,
+      "quants": [
+        {
+          "id": "UD-Q3_K_XL",
+          "sizeGB": 12.52,
+          "label": "UD-Q3_K_XL (recommended, 24GB VRAM)"
+        },
+        {
+          "id": "UD-Q4_K_XL",
+          "sizeGB": 16.69,
+          "label": "UD-Q4_K_XL (higher quality, 32GB+ VRAM)"
+        },
+        {
+          "id": "UD-Q5_K_XL",
+          "sizeGB": 18.83,
+          "label": "UD-Q5_K_XL (higher quality, 32GB+ VRAM)"
+        },
+        {
+          "id": "UD-Q6_K_XL",
+          "sizeGB": 24.14,
+          "label": "UD-Q6_K_XL (high quality, 48GB VRAM)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 27.05,
+          "label": "Q8_0 (highest quality, 48GB+ VRAM)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 24,
+        "minRamGB": 32,
+        "preferredQuant": "UD-Q3_K_XL"
+      }
     },
     {
       "id": "qwen3-coder-next-80b",
       "displayName": "Qwen3-Coder-Next 80B (MoE)",
       "family": "qwen",
       "category": "code",
-      "description": "Qwen's next-generation 80B code MoE — the flagship local coder for 48GB+ VRAM cards. Ships as a 4-shard GGUF; Bodega downloads all shards and loads them as one model. Q4_K_M is ~45 GB across four files.",
+      "description": "Qwen's next-generation 80B code MoE — the flagship local coder for 48GB+ VRAM cards. Ships as a 4-shard GGUF; Bodega downloads all shards and loads them as one model. Q4_K_M is ~45 GB across four files. Needs llama.cpp b7186+: that build is the first release containing the qwen3next architecture (ggml-org/llama.cpp#16095, merged 2025-11-28) — older binaries cannot load the GGUF at all. Note b7185 was published after the merge but does not contain it, so the date alone does not identify the build. Separately (NOT part of the gate): #19324 fixes a key_gdiff output-correctness bug; the model loads and runs without it.",
       "license": "apache-2.0",
       "huggingface": {
         "repoId": "Qwen/Qwen3-Coder-Next-GGUF",
@@ -2942,6 +3218,7 @@
       "contextLength": 262144,
       "supportsTools": true,
       "supportsFIM": true,
+      "minBuild": 7186,
       "quants": [
         {
           "id": "Q4_K_M",
@@ -2955,18 +3232,6 @@
         "minRamGB": 64,
         "preferredQuant": "Q4_K_M"
       }
-    },
-    {
-      "id": "deepseek-v4",
-      "status": "coming-soon",
-      "displayName": "DeepSeek V4",
-      "family": "deepseek",
-      "category": "reasoning",
-      "description": "DeepSeek's next flagship MoE (~172GB total weight). Cloud-only via the DeepSeek API preset — no mainstream-llama.cpp GGUF available at this size.",
-      "license": "deepseek",
-      "contextLength": 65536,
-      "supportsTools": true,
-      "supportsFIM": false
     }
   ],
   "wellKnownOverlay": {}
