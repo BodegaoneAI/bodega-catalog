@@ -1,6 +1,6 @@
 {
-  "version": "1.7.1",
-  "lastUpdated": "2026-08-18",
+  "version": "1.7.2",
+  "lastUpdated": "2026-08-19",
   "local": [
     {
       "name": "qwen3-coder-next",
@@ -1617,6 +1617,25 @@
         "code"
       ],
       "contextWindow": 1000000,
+      "benchmarks": {
+        "sweBench": null
+      }
+    },
+    {
+      "name": "glm-5.3",
+      "displayName": "GLM-5.3 (Z.ai)",
+      "provider": "zai",
+      "description": "Z.ai's new flagship (task #60, added 2026-08-19). 1M context, 128K output, mandatory reasoning (low/high/max effort). Live-verified via OpenRouter's /v1/models and cross-confirmed across 9+ independent gateway listings. OpenAI-compatible API.",
+      "pricing": {
+        "inputPerMTok": 1.4,
+        "outputPerMTok": 4.4
+      },
+      "capabilities": [
+        "tools",
+        "thinking",
+        "code"
+      ],
+      "contextWindow": 1048576,
       "benchmarks": {
         "sweBench": null
       }
