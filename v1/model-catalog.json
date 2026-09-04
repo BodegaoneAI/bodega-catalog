@@ -1,5 +1,5 @@
 {
-  "version": "1.9.0",
+  "version": "1.9.1",
   "lastUpdated": "2026-09-04",
   "local": [
     {
@@ -1882,10 +1882,11 @@
       "name": "qwen3.8-max",
       "displayName": "Qwen3.8 Max",
       "provider": "qwen",
-      "description": "Alibaba's new flagship (GA 2026-08-03, DashScope). 1M context, 131K max output, extended chain-of-thought (suppressible via enable_thinking:false). Not yet on OpenRouter — DashScope-only so far. Pricing is an ESTIMATE (qwen3.7-max sibling rate) — no published DashScope price found yet.",
+      "description": "Alibaba's new flagship (GA 2026-08-03, DashScope). 1M context, 131K max output, extended chain-of-thought (suppressible via enable_thinking:false). Available on DashScope and Together. Pricing verified 2026-09-04 on Alibaba's Model Studio pricing index and the qwen3-8-max page (Singapore/international band); cached input is 10% of input.",
       "pricing": {
-        "inputPerMTok": 1.6,
-        "outputPerMTok": 6.4
+        "inputPerMTok": 2,
+        "outputPerMTok": 6,
+        "cachedInputPerMTok": 0.25
       },
       "capabilities": [
         "tools",
