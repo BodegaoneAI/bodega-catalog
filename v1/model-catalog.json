@@ -1,6 +1,6 @@
 {
-  "version": "1.7.2",
-  "lastUpdated": "2026-08-19",
+  "version": "1.8.0",
+  "lastUpdated": "2026-08-27",
   "local": [
     {
       "name": "qwen3-coder-next",
@@ -1166,6 +1166,26 @@
       }
     },
     {
+      "name": "claude-fable-5-1",
+      "displayName": "Claude Fable 5.1",
+      "provider": "anthropic",
+      "description": "Anthropic's most capable widely-released model (released 2026-09-01). 1M native context. Adaptive thinking always-on; thinking is bound to the conversation prefix. Cache reads $0.25/MTok.",
+      "pricing": {
+        "inputPerMTok": 10,
+        "outputPerMTok": 50
+      },
+      "capabilities": [
+        "tools",
+        "thinking",
+        "vision",
+        "code"
+      ],
+      "contextWindow": 1000000,
+      "benchmarks": {
+        "sweBench": null
+      }
+    },
+    {
       "name": "claude-fable-5",
       "displayName": "Claude Fable 5",
       "provider": "anthropic",
@@ -1432,6 +1452,35 @@
             ],
             "inputPerMTok": 1.32,
             "outputPerMTok": 3.96
+          },
+          {
+            "effectiveFrom": "2026-08-27T00:00:00Z",
+            "inputPerMTok": 0.66,
+            "outputPerMTok": 1.98,
+            "cachedInputPerMTok": 0.022
+          },
+          {
+            "effectiveFrom": "2026-08-27T00:00:00Z",
+            "peakHoursUtc": [
+              [
+                1,
+                4
+              ],
+              [
+                6,
+                10
+              ]
+            ],
+            "peakDaysUtc": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "inputPerMTok": 1.32,
+            "outputPerMTok": 3.96,
+            "cachedInputPerMTok": 0.044
           }
         ]
       },
@@ -1473,6 +1522,35 @@
             ],
             "inputPerMTok": 0.44,
             "outputPerMTok": 1.32
+          },
+          {
+            "effectiveFrom": "2026-08-27T00:00:00Z",
+            "inputPerMTok": 0.22,
+            "outputPerMTok": 0.66,
+            "cachedInputPerMTok": 0.007
+          },
+          {
+            "effectiveFrom": "2026-08-27T00:00:00Z",
+            "peakHoursUtc": [
+              [
+                1,
+                4
+              ],
+              [
+                6,
+                10
+              ]
+            ],
+            "peakDaysUtc": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "inputPerMTok": 0.44,
+            "outputPerMTok": 1.32,
+            "cachedInputPerMTok": 0.014
           }
         ]
       },
@@ -1480,6 +1558,77 @@
         "tools",
         "thinking",
         "code"
+      ],
+      "contextWindow": 1048576,
+      "benchmarks": {
+        "sweBench": null
+      }
+    },
+    {
+      "name": "deepseek-v4-flash-vision-exp",
+      "displayName": "DeepSeek V4 Flash Vision (exp)",
+      "provider": "deepseek",
+      "description": "Vision-input variant of V4 Flash, first listed on DeepSeek's pricing page 2026-08-27. Images are tokenized by dimensions and billed as input tokens. Same rates and Mon-Fri peak/off-peak schedule as V4 Flash.",
+      "pricing": {
+        "inputPerMTok": 0.14,
+        "outputPerMTok": 0.28,
+        "periods": [
+          {
+            "effectiveFrom": "2026-08-16T16:00:00Z",
+            "inputPerMTok": 0.22,
+            "outputPerMTok": 0.66
+          },
+          {
+            "effectiveFrom": "2026-08-16T16:00:00Z",
+            "peakHoursUtc": [
+              [
+                1,
+                4
+              ],
+              [
+                6,
+                10
+              ]
+            ],
+            "inputPerMTok": 0.44,
+            "outputPerMTok": 1.32
+          },
+          {
+            "effectiveFrom": "2026-08-27T00:00:00Z",
+            "inputPerMTok": 0.22,
+            "outputPerMTok": 0.66,
+            "cachedInputPerMTok": 0.007
+          },
+          {
+            "effectiveFrom": "2026-08-27T00:00:00Z",
+            "peakHoursUtc": [
+              [
+                1,
+                4
+              ],
+              [
+                6,
+                10
+              ]
+            ],
+            "peakDaysUtc": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "inputPerMTok": 0.44,
+            "outputPerMTok": 1.32,
+            "cachedInputPerMTok": 0.014
+          }
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "thinking",
+        "code",
+        "vision"
       ],
       "contextWindow": 1048576,
       "benchmarks": {
@@ -1628,12 +1777,42 @@
       "description": "Z.ai's new flagship (task #60, added 2026-08-19). 1M context, 128K output, mandatory reasoning (low/high/max effort). Live-verified via OpenRouter's /v1/models and cross-confirmed across 9+ independent gateway listings. OpenAI-compatible API.",
       "pricing": {
         "inputPerMTok": 1.4,
-        "outputPerMTok": 4.4
+        "outputPerMTok": 4.4,
+        "cachedInputPerMTok": 0.26
       },
       "capabilities": [
         "tools",
         "thinking",
         "code"
+      ],
+      "contextWindow": 1048576,
+      "benchmarks": {
+        "sweBench": null
+      }
+    },
+    {
+      "name": "glm-5.3-flash",
+      "displayName": "GLM-5.3-Flash (Z.ai)",
+      "provider": "zai",
+      "description": "Z.ai's multimodal flash model (released 2026-08-26). 1M context, native image/video/file input, thinking always on, tools. Launch promo (50% off list) until 2026-09-09T16:00:00Z; the dated period reverts to list price. Verified on docs.z.ai and openrouter.ai.",
+      "pricing": {
+        "inputPerMTok": 0.075,
+        "outputPerMTok": 0.25,
+        "cachedInputPerMTok": 0.015,
+        "periods": [
+          {
+            "effectiveFrom": "2026-09-09T16:00:00Z",
+            "inputPerMTok": 0.15,
+            "outputPerMTok": 0.5,
+            "cachedInputPerMTok": 0.03
+          }
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "thinking",
+        "code",
+        "vision"
       ],
       "contextWindow": 1048576,
       "benchmarks": {
@@ -1647,7 +1826,8 @@
       "description": "Z.ai's current flagship (api.z.ai). 1M context (IndexShare sparse attention), 128K output, native thinking (High/Max effort) + tools. OpenAI-compatible API.",
       "pricing": {
         "inputPerMTok": 1.4,
-        "outputPerMTok": 4.4
+        "outputPerMTok": 4.4,
+        "cachedInputPerMTok": 0.26
       },
       "capabilities": [
         "tools",
@@ -1663,10 +1843,11 @@
       "name": "glm-5.1",
       "displayName": "GLM-5.1 (Z.ai)",
       "provider": "zai",
-      "description": "Zhipu AI's cloud-API flagship via Z.ai (api.z.ai). 200K context, thinking + tools. OpenAI-compatible API.",
+      "description": "Zhipu AI's earlier flagship via Z.ai (api.z.ai). 200K context, thinking + tools. OpenAI-compatible API. Re-priced 2026-08-27: docs.z.ai now lists 5.1 at the same $1.40/$4.40 card as 5.2/5.3.",
       "pricing": {
-        "inputPerMTok": 0.98,
-        "outputPerMTok": 3.08
+        "inputPerMTok": 1.4,
+        "outputPerMTok": 4.4,
+        "cachedInputPerMTok": 0.26
       },
       "capabilities": [
         "tools",

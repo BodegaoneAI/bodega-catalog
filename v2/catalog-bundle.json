@@ -1,9 +1,9 @@
 {
-  "version": "mc1.7.2+llama1.13.0",
-  "lastUpdated": "2026-08-19",
+  "version": "mc1.8.0+llama1.14.0",
+  "lastUpdated": "2026-08-27",
   "modelCatalog": {
-    "version": "1.7.2",
-    "lastUpdated": "2026-08-19",
+    "version": "1.8.0",
+    "lastUpdated": "2026-08-27",
     "local": [
       {
         "name": "qwen3-coder-next",
@@ -1169,6 +1169,26 @@
         }
       },
       {
+        "name": "claude-fable-5-1",
+        "displayName": "Claude Fable 5.1",
+        "provider": "anthropic",
+        "description": "Anthropic's most capable widely-released model (released 2026-09-01). 1M native context. Adaptive thinking always-on; thinking is bound to the conversation prefix. Cache reads $0.25/MTok.",
+        "pricing": {
+          "inputPerMTok": 10,
+          "outputPerMTok": 50
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "vision",
+          "code"
+        ],
+        "contextWindow": 1000000,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
         "name": "claude-fable-5",
         "displayName": "Claude Fable 5",
         "provider": "anthropic",
@@ -1435,6 +1455,35 @@
               ],
               "inputPerMTok": 1.32,
               "outputPerMTok": 3.96
+            },
+            {
+              "effectiveFrom": "2026-08-27T00:00:00Z",
+              "inputPerMTok": 0.66,
+              "outputPerMTok": 1.98,
+              "cachedInputPerMTok": 0.022
+            },
+            {
+              "effectiveFrom": "2026-08-27T00:00:00Z",
+              "peakHoursUtc": [
+                [
+                  1,
+                  4
+                ],
+                [
+                  6,
+                  10
+                ]
+              ],
+              "peakDaysUtc": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "inputPerMTok": 1.32,
+              "outputPerMTok": 3.96,
+              "cachedInputPerMTok": 0.044
             }
           ]
         },
@@ -1476,6 +1525,35 @@
               ],
               "inputPerMTok": 0.44,
               "outputPerMTok": 1.32
+            },
+            {
+              "effectiveFrom": "2026-08-27T00:00:00Z",
+              "inputPerMTok": 0.22,
+              "outputPerMTok": 0.66,
+              "cachedInputPerMTok": 0.007
+            },
+            {
+              "effectiveFrom": "2026-08-27T00:00:00Z",
+              "peakHoursUtc": [
+                [
+                  1,
+                  4
+                ],
+                [
+                  6,
+                  10
+                ]
+              ],
+              "peakDaysUtc": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "inputPerMTok": 0.44,
+              "outputPerMTok": 1.32,
+              "cachedInputPerMTok": 0.014
             }
           ]
         },
@@ -1483,6 +1561,77 @@
           "tools",
           "thinking",
           "code"
+        ],
+        "contextWindow": 1048576,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "deepseek-v4-flash-vision-exp",
+        "displayName": "DeepSeek V4 Flash Vision (exp)",
+        "provider": "deepseek",
+        "description": "Vision-input variant of V4 Flash, first listed on DeepSeek's pricing page 2026-08-27. Images are tokenized by dimensions and billed as input tokens. Same rates and Mon-Fri peak/off-peak schedule as V4 Flash.",
+        "pricing": {
+          "inputPerMTok": 0.14,
+          "outputPerMTok": 0.28,
+          "periods": [
+            {
+              "effectiveFrom": "2026-08-16T16:00:00Z",
+              "inputPerMTok": 0.22,
+              "outputPerMTok": 0.66
+            },
+            {
+              "effectiveFrom": "2026-08-16T16:00:00Z",
+              "peakHoursUtc": [
+                [
+                  1,
+                  4
+                ],
+                [
+                  6,
+                  10
+                ]
+              ],
+              "inputPerMTok": 0.44,
+              "outputPerMTok": 1.32
+            },
+            {
+              "effectiveFrom": "2026-08-27T00:00:00Z",
+              "inputPerMTok": 0.22,
+              "outputPerMTok": 0.66,
+              "cachedInputPerMTok": 0.007
+            },
+            {
+              "effectiveFrom": "2026-08-27T00:00:00Z",
+              "peakHoursUtc": [
+                [
+                  1,
+                  4
+                ],
+                [
+                  6,
+                  10
+                ]
+              ],
+              "peakDaysUtc": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "inputPerMTok": 0.44,
+              "outputPerMTok": 1.32,
+              "cachedInputPerMTok": 0.014
+            }
+          ]
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code",
+          "vision"
         ],
         "contextWindow": 1048576,
         "benchmarks": {
@@ -1631,12 +1780,42 @@
         "description": "Z.ai's new flagship (task #60, added 2026-08-19). 1M context, 128K output, mandatory reasoning (low/high/max effort). Live-verified via OpenRouter's /v1/models and cross-confirmed across 9+ independent gateway listings. OpenAI-compatible API.",
         "pricing": {
           "inputPerMTok": 1.4,
-          "outputPerMTok": 4.4
+          "outputPerMTok": 4.4,
+          "cachedInputPerMTok": 0.26
         },
         "capabilities": [
           "tools",
           "thinking",
           "code"
+        ],
+        "contextWindow": 1048576,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "glm-5.3-flash",
+        "displayName": "GLM-5.3-Flash (Z.ai)",
+        "provider": "zai",
+        "description": "Z.ai's multimodal flash model (released 2026-08-26). 1M context, native image/video/file input, thinking always on, tools. Launch promo (50% off list) until 2026-09-09T16:00:00Z; the dated period reverts to list price. Verified on docs.z.ai and openrouter.ai.",
+        "pricing": {
+          "inputPerMTok": 0.075,
+          "outputPerMTok": 0.25,
+          "cachedInputPerMTok": 0.015,
+          "periods": [
+            {
+              "effectiveFrom": "2026-09-09T16:00:00Z",
+              "inputPerMTok": 0.15,
+              "outputPerMTok": 0.5,
+              "cachedInputPerMTok": 0.03
+            }
+          ]
+        },
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code",
+          "vision"
         ],
         "contextWindow": 1048576,
         "benchmarks": {
@@ -1650,7 +1829,8 @@
         "description": "Z.ai's current flagship (api.z.ai). 1M context (IndexShare sparse attention), 128K output, native thinking (High/Max effort) + tools. OpenAI-compatible API.",
         "pricing": {
           "inputPerMTok": 1.4,
-          "outputPerMTok": 4.4
+          "outputPerMTok": 4.4,
+          "cachedInputPerMTok": 0.26
         },
         "capabilities": [
           "tools",
@@ -1666,10 +1846,11 @@
         "name": "glm-5.1",
         "displayName": "GLM-5.1 (Z.ai)",
         "provider": "zai",
-        "description": "Zhipu AI's cloud-API flagship via Z.ai (api.z.ai). 200K context, thinking + tools. OpenAI-compatible API.",
+        "description": "Zhipu AI's earlier flagship via Z.ai (api.z.ai). 200K context, thinking + tools. OpenAI-compatible API. Re-priced 2026-08-27: docs.z.ai now lists 5.1 at the same $1.40/$4.40 card as 5.2/5.3.",
         "pricing": {
-          "inputPerMTok": 0.98,
-          "outputPerMTok": 3.08
+          "inputPerMTok": 1.4,
+          "outputPerMTok": 4.4,
+          "cachedInputPerMTok": 0.26
         },
         "capabilities": [
           "tools",
@@ -1895,6 +2076,12 @@
     },
     {
       "id": "qwen3-30b-a3b",
+      "moe": {
+        "totalParamsB": 30.5,
+        "activeParamsB": 3.3,
+        "expertCount": 128,
+        "layerCount": 48
+      },
       "displayName": "Qwen 3 30B A3B (MoE)",
       "family": "qwen",
       "category": "general",
@@ -1935,7 +2122,7 @@
       "displayName": "Qwen3.6 27B (MTP)",
       "family": "qwen",
       "category": "general",
-      "description": "Qwen3.6 27B MTP-variant GGUF — contains NextN/MTP speculative-decode layers. When Performance Mode is on, llama-server uses --spec-type draft-mtp for 1.4×+ tok/s on high-VRAM GPUs. Requires a 20GB+ VRAM card; tested live at 110 tok/s (RTX 5090) vs 75 tok/s without (beta.25 A3 2026-06-02).",
+      "description": "Qwen3.6 27B MTP-variant GGUF — contains NextN/MTP speculative-decode layers. When Performance Mode is on, llama-server uses --spec-type draft-mtp for a speculative-decode speedup on high-VRAM GPUs. Requires a 20GB+ VRAM card. The specific tok/s comparison previously cited here (110 vs 75, beta.25 A3 2026-06-02) is UNVERIFIED — flagged 2026-08-23 pending a gguf-dump re-check of the shard's tensor list; do not cite it as a measured figure until re-confirmed.",
       "license": "apache-2.0",
       "huggingface": {
         "repoId": "unsloth/Qwen3.6-27B-MTP-GGUF",
@@ -2711,6 +2898,12 @@
     },
     {
       "id": "qwen3-coder-30b-a3b",
+      "moe": {
+        "totalParamsB": 30.5,
+        "activeParamsB": 3.3,
+        "expertCount": 128,
+        "layerCount": 48
+      },
       "displayName": "Qwen3-Coder 30B A3B (MoE)",
       "family": "qwen",
       "category": "code",
@@ -2888,6 +3081,12 @@
     },
     {
       "id": "qwen3-vl-30b-a3b",
+      "moe": {
+        "totalParamsB": 30.5,
+        "activeParamsB": 3.3,
+        "expertCount": 128,
+        "layerCount": 48
+      },
       "displayName": "Qwen3-VL 30B A3B (Vision, MoE)",
       "family": "qwen",
       "category": "vision",
@@ -3239,7 +3438,49 @@
       }
     },
     {
+      "id": "superqwen3.8-27b-abliterated",
+      "displayName": "SuperQwen 3.8 27B Abliterated",
+      "family": "qwen",
+      "category": "vision",
+      "conduct": "uncensored",
+      "provenanceNote": "Community modification by Jiunsong (published 2026-08-24), not a Qwen release. Base model: Qwen/Qwen3.8-27B. What was modified: a full-BF16 rank-4 refusal-subspace edit ('abliteration') of the text tower; the vision tower is unmodified; the chat template's reasoning-effort default was changed from xhigh to medium with stop conditions. The author's claims - refusal rate 93.75% to 0%, 9/9 deterministic-task pass - are the author's own measurements, not Bodega's. Bodega verified (2026-08-27, RTX 5090): the Q4_K_M GGUF downloads with a matching SHA-256, loads under llama.cpp, and passes the tool-calling gate.",
+      "description": "Uncensored community edit of Qwen 3.8 27B (Apache 2.0). Same architecture as the qwen3.8-27b entry - it loads as qwen3_5 with the Qwen3-VL projector (ggml-org/llama.cpp#19468, merged fc0fe400 - the same merge the base entry's gate cites), so it needs the same llama.cpp b7990+ floor, and vision needs the mmproj file. One published quant (Q4_K_M, 15.4 GB) plus a Q8_0 mmproj; sizes are exact GiB from the HF tree API. Because the weights were behaviorally edited, this entry deliberately carries NO reasoningTiers contract: the graded Low/Medium/Extra-High picker does not apply, and the model gets the boolean thinking toggle like every other local reasoner without a tier contract. The provenance note states what was modified and which claims are the author's versus Bodega-verified.",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "Jiunsong/SuperQwen3.8-27b-abliterated-GGUF",
+        "filenamePattern": "SuperQwen3.8-27b-abliterated-{quant}.gguf"
+      },
+      "mmproj": {
+        "repoId": "Jiunsong/SuperQwen3.8-27b-abliterated-GGUF",
+        "filename": "mmproj-SuperQwen3.8-27b-abliterated-Q8_0.gguf",
+        "sizeGB": 0.59
+      },
+      "contextLength": 262144,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "minBuild": 7990,
+      "vision": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 15.41,
+          "label": "Q4_K_M (only published quant, 24GB VRAM)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 24,
+        "minRamGB": 32,
+        "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
       "id": "qwen3-coder-next-80b",
+      "moe": {
+        "totalParamsB": 80,
+        "activeParamsB": 3,
+        "expertCount": 512,
+        "layerCount": 48
+      },
       "displayName": "Qwen3-Coder-Next 80B (MoE)",
       "family": "qwen",
       "category": "code",
