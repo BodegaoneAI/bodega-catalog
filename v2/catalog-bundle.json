@@ -1,9 +1,9 @@
 {
-  "version": "mc1.8.0+llama1.14.0",
-  "lastUpdated": "2026-08-27",
+  "version": "mc1.9.0+llama1.15.0",
+  "lastUpdated": "2026-09-04",
   "modelCatalog": {
-    "version": "1.8.0",
-    "lastUpdated": "2026-08-27",
+    "version": "1.9.0",
+    "lastUpdated": "2026-09-04",
     "local": [
       {
         "name": "qwen3-coder-next",
@@ -128,6 +128,25 @@
         "estimatedVramGB": 3,
         "useCase": "general",
         "minTier": "small",
+        "capabilities": [
+          "tools",
+          "thinking",
+          "code"
+        ],
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "nemotron-3.5-lightning:30b-a3b-q4_K_M",
+        "displayName": "Nvidia Nemotron 3.5 Lightning (30B-A3B)",
+        "family": "nemotron",
+        "description": "Nvidia's hybrid Mamba-2 + MoE + full-attention model, 30B total / 3B active. 1M native context. Ollama's own q4_K_M quantization (25GB) -- no Q4_K_M quant is published on the official ggml-org HF GGUF repo, so this tag is Ollama-specific and distinct from the llama.cpp catalog's Q4_0/Q8_0 entry. License: OpenMDW-1.1 (openmdw.ai/license/1-1/), not the NVIDIA Open Model License.",
+        "parameterSize": "30B-A3B",
+        "downloadSizeGB": 25,
+        "estimatedVramGB": 26,
+        "useCase": "general",
+        "minTier": "large",
         "capabilities": [
           "tools",
           "thinking",
@@ -2508,6 +2527,43 @@
       }
     },
     {
+      "id": "devstral-small-2-2512",
+      "displayName": "Devstral Small 2 (2512)",
+      "family": "mistral",
+      "category": "code",
+      "description": "Mistral's successor to devstral-small-2507 (which Mistral's own README calls 'Devstral Small 1.1'). New base (Mistral3ForConditionalGeneration / mistral3, vs the old MistralForCausalLM), 256k native context window (up from 131072), same coding-agent focus. Architecture already supported by mainline llama.cpp well before the current pin (mistral3 merged long before b10353 — no minBuild gate).",
+      "license": "apache-2.0",
+      "huggingface": {
+        "repoId": "unsloth/Devstral-Small-2-24B-Instruct-2512-GGUF",
+        "filenamePattern": "Devstral-Small-2-24B-Instruct-2512-{quant}.gguf"
+      },
+      "contextLength": 262144,
+      "supportsTools": true,
+      "supportsFIM": true,
+      "quants": [
+        {
+          "id": "Q4_K_M",
+          "sizeGB": 13.35,
+          "label": "Q4_K_M (smaller)"
+        },
+        {
+          "id": "Q5_K_M",
+          "sizeGB": 15.61,
+          "label": "Q5_K_M (recommended)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 23.33,
+          "label": "Q8_0 (highest quality)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 16,
+        "minRamGB": 24,
+        "preferredQuant": "Q5_K_M"
+      }
+    },
+    {
       "id": "deepseek-r1-distill-qwen-14b",
       "displayName": "DeepSeek R1 Distill Qwen 14B",
       "family": "deepseek",
@@ -3507,6 +3563,44 @@
         "minVramGB": 48,
         "minRamGB": 64,
         "preferredQuant": "Q4_K_M"
+      }
+    },
+    {
+      "id": "nemotron-3.5-lightning-30b-a3b",
+      "moe": {
+        "totalParamsB": 30,
+        "activeParamsB": 3,
+        "expertCount": 128,
+        "layerCount": 53
+      },
+      "displayName": "NVIDIA Nemotron 3.5 Lightning 30B-A3B",
+      "family": "nemotron",
+      "category": "general",
+      "description": "NVIDIA's hybrid Mamba-2 + MoE + full-attention model (arch nemotron_h_moe), 30B total / 3B active, 1M-token native context. Only Q4_0 and Q8_0 are published by the official ggml-org GGUF repo — no Q4_K_M or Q5_K_M exist for this model. License is OpenMDW-1.1 (openmdw.ai/license/1-1/), not the NVIDIA Open Model License. The repo also ships a separate MTP draft-head file (mtp-*.gguf); speculative decoding via it is NOT enabled here because ggml-org/llama.cpp#27717 (open) crashes loading that draft head with 'invalid vector subscript' when --n-cpu-moe is set below a per-setup threshold — the base model alone loads and runs fine.",
+      "license": "openmdw-1.1",
+      "huggingface": {
+        "repoId": "ggml-org/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF",
+        "filenamePattern": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-{quant}.gguf"
+      },
+      "contextLength": 1048576,
+      "supportsTools": true,
+      "supportsFIM": false,
+      "quants": [
+        {
+          "id": "Q4_0",
+          "sizeGB": 17.6,
+          "label": "Q4_0 (only small quant published, 24GB+ VRAM)"
+        },
+        {
+          "id": "Q8_0",
+          "sizeGB": 31.28,
+          "label": "Q8_0 (highest quality published, 40GB+ VRAM)"
+        }
+      ],
+      "recommendedFor": {
+        "minVramGB": 24,
+        "minRamGB": 32,
+        "preferredQuant": "Q4_0"
       }
     }
   ],

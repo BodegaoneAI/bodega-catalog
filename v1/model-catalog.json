@@ -1,6 +1,6 @@
 {
-  "version": "1.8.0",
-  "lastUpdated": "2026-08-27",
+  "version": "1.9.0",
+  "lastUpdated": "2026-09-04",
   "local": [
     {
       "name": "qwen3-coder-next",
@@ -125,6 +125,25 @@
       "estimatedVramGB": 3,
       "useCase": "general",
       "minTier": "small",
+      "capabilities": [
+        "tools",
+        "thinking",
+        "code"
+      ],
+      "benchmarks": {
+        "sweBench": null
+      }
+    },
+    {
+      "name": "nemotron-3.5-lightning:30b-a3b-q4_K_M",
+      "displayName": "Nvidia Nemotron 3.5 Lightning (30B-A3B)",
+      "family": "nemotron",
+      "description": "Nvidia's hybrid Mamba-2 + MoE + full-attention model, 30B total / 3B active. 1M native context. Ollama's own q4_K_M quantization (25GB) -- no Q4_K_M quant is published on the official ggml-org HF GGUF repo, so this tag is Ollama-specific and distinct from the llama.cpp catalog's Q4_0/Q8_0 entry. License: OpenMDW-1.1 (openmdw.ai/license/1-1/), not the NVIDIA Open Model License.",
+      "parameterSize": "30B-A3B",
+      "downloadSizeGB": 25,
+      "estimatedVramGB": 26,
+      "useCase": "general",
+      "minTier": "large",
       "capabilities": [
         "tools",
         "thinking",
