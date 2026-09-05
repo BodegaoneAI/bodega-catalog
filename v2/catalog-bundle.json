@@ -1,9 +1,9 @@
 {
-  "version": "mc1.9.1+llama1.16.0",
-  "lastUpdated": "2026-09-04",
+  "version": "mc1.9.2+llama1.16.0",
+  "lastUpdated": "2026-09-05",
   "modelCatalog": {
-    "version": "1.9.1",
-    "lastUpdated": "2026-09-04",
+    "version": "1.9.2",
+    "lastUpdated": "2026-09-05",
     "local": [
       {
         "name": "qwen3-coder-next",
@@ -1877,6 +1877,46 @@
           "code"
         ],
         "contextWindow": 200000,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "qwen3.8-flash",
+        "displayName": "Qwen3.8 Flash",
+        "provider": "qwen",
+        "description": "The hosted production id of Qwen3.8-Flash-Next (Qwen4 architecture preview, MoE ~125B total / 6B active). Multimodal (image/video), 1M context, 131K max output. Verified live 2026-09-05 on QwenCloud's own model page, OpenRouter's Alibaba endpoint and Novita at the same rate; cached input is QwenCloud's implicit-cache read price.",
+        "pricing": {
+          "inputPerMTok": 0.15,
+          "outputPerMTok": 0.47,
+          "cachedInputPerMTok": 0.016
+        },
+        "capabilities": [
+          "tools",
+          "vision",
+          "thinking"
+        ],
+        "contextWindow": 1000000,
+        "benchmarks": {
+          "sweBench": null
+        }
+      },
+      {
+        "name": "qwen3.8-27b",
+        "displayName": "Qwen3.8 27B (hosted)",
+        "provider": "qwen",
+        "description": "QwenCloud's hosted Qwen3.8-27B (the same open-weights model the local catalog carries as qwen3.8-27b). 1M context, 131K max output, vision + function calling. Verified live 2026-09-05 on QwenCloud's model page; cached input is the implicit-cache read price.",
+        "pricing": {
+          "inputPerMTok": 0.5,
+          "outputPerMTok": 3,
+          "cachedInputPerMTok": 0.1
+        },
+        "capabilities": [
+          "tools",
+          "vision",
+          "thinking"
+        ],
+        "contextWindow": 1000000,
         "benchmarks": {
           "sweBench": null
         }
